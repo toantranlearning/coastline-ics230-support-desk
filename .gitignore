@@ -1,0 +1,12 @@
+# Generated on first run from data/seed.sql. Never commit the database.
+data/portal.sqlite
+
+# Local environment. Keys and secrets belong here, and this file never ships.
+.env
+
+# Editor and OS noise
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
