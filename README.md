@@ -51,6 +51,9 @@ never touch it directly:
 `reset.sh` also deletes `data/portal.sqlite`, which rebuilds from `data/seed.sql`
 the next time you open a page, so a reset restores the data too.
 
+Anything you put in `reports/` is left alone by all of these. `nukeitall.sh`
+sets the folder aside and puts it back into the fresh copy.
+
 ## Layout
 
 ```
@@ -67,9 +70,11 @@ outbox.php         mail the portal would have sent (no mail server here)
 db.php             database connection, shared
 auth.php           sign-in and session helpers, shared
 layout.php         the page shell, shared
+router.php         routing rules for the built-in server
 portal.css         styles
 data/              seed.sql and the generated database
 lib/               shared helper functions (see lib/README.md)
+reports/           your own write-ups, kept out of version control
 scripts/           start, reset, save, diff, and reprovision helpers
 ```
 

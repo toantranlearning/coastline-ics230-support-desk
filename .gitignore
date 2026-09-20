@@ -4,6 +4,10 @@ data/portal.sqlite
 # Local environment. Keys and secrets belong here, and this file never ships.
 .env
 
+# Your own write-ups and working notes. They stay on your machine.
+reports/*
+!reports/README.md
+
 # Editor and OS noise
 .vscode/
 .idea/

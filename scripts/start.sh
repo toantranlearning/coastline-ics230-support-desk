@@ -83,7 +83,21 @@ command -v fuser >/dev/null 2>&1 && fuser -k 8080/tcp >/dev/null 2>&1 && freed=1
 pkill -f 'php -S .*:8080' >/dev/null 2>&1 && freed=1
 [ -n "$freed" ] && { sleep 1; echo "Stopped an earlier portal that was still running."; }
 LOG=/tmp/techcorp-portal.log
-nohup php -S 0.0.0.0:8080 >"$LOG" 2>&1 &
+
+# Local settings. Keys and other secrets live in .env, which never ships, and
+# the helpers in lib/ read them from the environment. Load the file when there
+# is one, so the portal sees them. After you change .env, run this again.
+if [ -f .env ]; then
+  set -a
+  . ./.env
+  set +a
+fi
+
+# The built-in server has no configuration file, so router.php carries the
+# routing rules. Use it when it is there.
+ROUTER=""
+[ -f router.php ] && ROUTER="router.php"
+nohup php -S 0.0.0.0:8080 $ROUTER >"$LOG" 2>&1 &
 disown 2>/dev/null
 sleep 1
 if pgrep -f 'php -S 0.0.0.0:8080' >/dev/null 2>&1; then
