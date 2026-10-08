@@ -43,7 +43,6 @@ never touch it directly:
 ```
 ./scripts/save.sh "parameterized the search query"   # save a checkpoint you can return to
 ./scripts/reset.sh                                    # undo unsaved changes
-./scripts/reset.sh --checkpoint <name>                # restore a saved checkpoint
 ./scripts/reset.sh --baseline                         # back to the original
 ./scripts/nukeitall.sh                                # remove every copy and fetch a fresh one
 ```

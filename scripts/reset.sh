@@ -3,7 +3,6 @@
 #
 #   ./scripts/reset.sh                     discard changes you have not saved
 #   ./scripts/reset.sh --undo              step back one saved change
-#   ./scripts/reset.sh --checkpoint <name> restore a saved checkpoint
 #   ./scripts/reset.sh --baseline          go all the way back to the original
 #
 # This rewrites files. Anything you have not saved with save.sh is lost.
@@ -35,16 +34,9 @@ case "${1:-}" in
     git fetch --tags --quiet 2>/dev/null || true
     git reset --hard baseline >/dev/null
     ;;
-  --checkpoint)
-    [ -z "${2:-}" ] && { echo "Which checkpoint? e.g. ./scripts/reset.sh --checkpoint v1"; exit 1; }
-    ref="checkpoint-${2}"
-    confirm "This restores the saved checkpoint ${ref}."
-    git fetch --tags --quiet 2>/dev/null || true
-    git checkout "$ref" -- . 2>/dev/null || { echo "No checkpoint named '$ref' exists yet."; exit 1; }
-    ;;
   *)
     echo "Unknown option: $1"
-    echo "Try: ./scripts/reset.sh | --undo | --checkpoint <name> | --baseline"
+    echo "Try: ./scripts/reset.sh | --undo | --baseline"
     exit 1
     ;;
 esac
