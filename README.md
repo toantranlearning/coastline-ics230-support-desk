@@ -41,7 +41,7 @@ Every change stays in your own copy. Two helpers wrap version control so you
 never touch it directly:
 
 ```
-./scripts/save.sh "parameterized the search query"   # save a checkpoint you can return to
+./scripts/save.sh "parameterized the search query"   # save a point you can return to
 ./scripts/reset.sh                                    # undo unsaved changes
 ./scripts/reset.sh --baseline                         # back to the original
 ./scripts/nukeitall.sh                                # remove every copy and fetch a fresh one

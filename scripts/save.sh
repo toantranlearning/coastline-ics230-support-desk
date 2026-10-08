@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Save your work so far, as one checkpoint you can come back to.
+# Save your work so far, as one save point you can come back to.
 # Usage: ./scripts/save.sh "what you changed"
 set -e
 cd "$(dirname "$0")/.."
