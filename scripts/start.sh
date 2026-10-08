@@ -47,34 +47,6 @@ if ! php -m 2>/dev/null | grep -qi '^pdo_sqlite$'; then
   sudo apt-get install -y php-sqlite3 >/dev/null 2>&1 || true
 fi
 
-# Turn the editor's Gemini Code Assist off by default so its panel does not open.
-# Written to the editor's global and user settings, keeping any existing settings
-# and never overriding a choice you later make. Takes effect on the next load.
-python3 - <<'PYEOF' 2>/dev/null || true
-import json, os
-paths = [os.path.expanduser("~/.codeoss/data/Machine/settings.json"),
-         os.path.expanduser("~/.codeoss/data/User/settings.json")]
-keys = ("geminicodeassist.enable",
-        "cloudcode.geminiCodeAssist.enable",
-        "cloudcode.enableGeminiCodeAssist",
-        "geminicodeassist.inlineSuggestions.enableAuto",
-        "cloudcode.geminiCodeAssist.inlineSuggestions.enableAuto")
-for p in paths:
-    os.makedirs(os.path.dirname(p), exist_ok=True)
-    try:
-        d = json.load(open(p)); d = d if isinstance(d, dict) else {}
-    except Exception:
-        d = {}
-    for k in keys:
-        d.setdefault(k, False)
-    json.dump(d, open(p, "w"), indent=2)
-PYEOF
-
-# Keep the editor's Source Control panel to just this project. Gemini leaves a
-# history folder in your home directory that shows up as its own repo; Gemini is
-# off, so this leftover is unused. Clear it.
-rm -rf ~/.gemini/history 2>/dev/null || true
-
 # Start the portal in the background so the terminal stays free. Stop anything
 # already holding port 8080 first, however it was started, so running this again
 # always gives a fresh, working portal.
