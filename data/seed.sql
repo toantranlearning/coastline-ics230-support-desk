@@ -37,7 +37,9 @@ CREATE TABLE customers (
     account_status TEXT    NOT NULL DEFAULT 'active',
     -- Stored as entered so the desk can match a caller by the exact tax id.
     tax_id         TEXT    NOT NULL,
-    assigned_rep   TEXT    NOT NULL
+    assigned_rep   TEXT    NOT NULL,
+    -- Sprint 20. Which business partner the account came through. 0 is direct.
+    partner_id     INTEGER NOT NULL DEFAULT 0
 );
 
 CREATE TABLE notes (
@@ -48,15 +50,15 @@ CREATE TABLE notes (
     created_at      TEXT    NOT NULL
 );
 
-INSERT INTO customers (display_name, city, account_status, tax_id, assigned_rep) VALUES
-    ('Alma Restrepo',      'Long Beach',   'active',    '412-88-2130', 'rmarsh'),
-    ('Dermot O''Brien',    'Costa Mesa',   'active',    '318-55-9042', 'rmarsh'),
-    ('Yusuf Adeyemi',      'Irvine',       'active',    '229-41-7788', 'rmarsh'),
-    ('Priya Raghunathan',  'Santa Ana',    'past_due',  '556-20-3391', 'lchen'),
-    ('Marta Kowalczyk',    'Westminster',  'active',    '701-63-5514', 'lchen'),
-    ('Desmond Achebe',     'Fountain Vly', 'closed',    '884-19-2276', 'lchen'),
-    ('Josephine Tran',     'Garden Grove', 'active',    '145-72-6608', 'rmarsh'),
-    ('<b>Test Account</b>','Huntington',   'active',    '000-00-0000', 'rmarsh');
+INSERT INTO customers (display_name, city, account_status, tax_id, assigned_rep, partner_id) VALUES
+    ('Alma Restrepo',      'Long Beach',   'active',    '412-88-2130', 'rmarsh', 1),
+    ('Dermot O''Brien',    'Costa Mesa',   'active',    '318-55-9042', 'rmarsh', 1),
+    ('Yusuf Adeyemi',      'Irvine',       'active',    '229-41-7788', 'rmarsh', 2),
+    ('Priya Raghunathan',  'Santa Ana',    'past_due',  '556-20-3391', 'lchen',  2),
+    ('Marta Kowalczyk',    'Westminster',  'active',    '701-63-5514', 'lchen',  0),
+    ('Desmond Achebe',     'Fountain Vly', 'closed',    '884-19-2276', 'lchen',  1),
+    ('Josephine Tran',     'Garden Grove', 'active',    '145-72-6608', 'rmarsh', 2),
+    ('<b>Test Account</b>','Huntington',   'active',    '000-00-0000', 'rmarsh', 0);
 
 INSERT INTO notes (customer_id, body, created_by_name, created_at) VALUES
     (1, 'Called about the invoice dispute. Escalating to billing.', 'Rae Marsh',  datetime('now', '-18 days', '+9 hours')),
@@ -97,4 +99,62 @@ CREATE TABLE reset_tokens (
     token_hash TEXT    NOT NULL,
     expires_at TEXT    NOT NULL,
     used_at    TEXT
+);
+
+-- Sprint 20. The desk asked for a record of failed sign-ins after a run of
+-- lockout complaints that nobody could reconstruct. The table is here; nothing
+-- writes to it or reads it yet.
+DROP TABLE IF EXISTS login_failures;
+CREATE TABLE login_failures (
+    id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    username  TEXT    NOT NULL,
+    source    TEXT    NOT NULL,
+    failed_at TEXT    NOT NULL
+);
+
+-- Sprint 20. Tables for the partner API project. Business partners will reach
+-- their own customers' records through an API under api/. The schema is in
+-- place so the project can start; no endpoint exists yet.
+DROP TABLE IF EXISTS partners;
+CREATE TABLE partners (
+    id   INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT    NOT NULL
+);
+
+INSERT INTO partners (name) VALUES
+    ('Harbor Logistics'),
+    ('Pacific Rim Dental Group');
+
+-- One row per API key a partner holds. Only the SHA-256 of the key is stored;
+-- the key itself is given to the partner once and never kept here.
+DROP TABLE IF EXISTS api_clients;
+CREATE TABLE api_clients (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    partner_id INTEGER NOT NULL,
+    name       TEXT    NOT NULL,
+    key_hash   TEXT    NOT NULL,
+    created_at TEXT    NOT NULL,
+    disabled   INTEGER NOT NULL DEFAULT 0
+);
+
+-- The development key is the string demo-key. Hash: sha256('demo-key').
+INSERT INTO api_clients (partner_id, name, key_hash, created_at) VALUES
+    (1, 'Harbor Logistics dashboard', 'c48a01f49fd0f2cc404bc3cbbc80e91457a3d41bb429a695243de4c61794155c', datetime('now', '-3 days'));
+
+-- One row per API request, for rate limiting. made_at is a Unix timestamp.
+DROP TABLE IF EXISTS api_calls;
+CREATE TABLE api_calls (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    partner_id INTEGER NOT NULL,
+    made_at    INTEGER NOT NULL
+);
+
+-- One row per change made through the API, so every change is traceable.
+DROP TABLE IF EXISTS audit_log;
+CREATE TABLE audit_log (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    partner_id INTEGER NOT NULL,
+    action     TEXT    NOT NULL,
+    target     TEXT    NOT NULL,
+    at         INTEGER NOT NULL
 );

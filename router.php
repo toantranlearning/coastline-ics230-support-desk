@@ -24,6 +24,23 @@ if ($path === '/') {
     return true;
 }
 
+// Sprint 20. The partner API lives under api/, one script per resource, and
+// partners call it without a .php extension: /api/customers runs
+// api/customers.php, and /api/customers/7 runs the same script with "/7" left
+// in PATH_INFO for the script to read.
+if (preg_match('#^/api/([a-z][a-z0-9_-]*)(/.*)?$#', $path, $m)) {
+    $script = __DIR__ . '/api/' . $m[1] . '.php';
+    if (file_exists($script)) {
+        $_SERVER['PATH_INFO'] = $m[2] ?? '';
+        require $script;
+        return true;
+    }
+    http_response_code(404);
+    header('Content-Type: application/json');
+    echo json_encode(['error' => 'No such resource']);
+    return true;
+}
+
 // Anything that exists in the project folder is served as it is.
 if (file_exists(__DIR__ . $path)) {
     return false;
