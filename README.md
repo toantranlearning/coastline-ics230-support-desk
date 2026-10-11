@@ -81,3 +81,11 @@ scripts/           start, reset, save, diff, and reprovision helpers
 
 Internal tool, for development use. Do not put real customer data or real
 passwords in a development copy, and run it only in your own environment.
+
+## Incident-report assignments
+
+Use the [incident-report starters](assignments/incident-reports/README.md) for the module assigned in Canvas. Copy the starter into `reports/`, then add your own analysis, evidence, repair, and verification within the assignment scope. The supplied case background is already included. Submit completed work to Canvas.
+
+## Module resources
+
+Browse the [module resources](module-resources/index.html) for Orientation references, lectures, PHP companions, and assignment instructions. In your running portal, open `/module-resources/index.html`. Use Canvas for quizzes, deadlines, grades, and submissions.
