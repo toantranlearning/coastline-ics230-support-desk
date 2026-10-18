@@ -47,6 +47,35 @@ if ! php -m 2>/dev/null | grep -qi '^pdo_sqlite$'; then
   sudo apt-get install -y php-sqlite3 >/dev/null 2>&1 || true
 fi
 
+# An earlier version of this script saved editor settings that turned Gemini
+# Code Assist off, and those settings stay in your home folder. Remove them so
+# the assistant is back to normal. Only those exact settings, and only where they
+# are set to off, are removed; a settings file this cannot read is left alone.
+python3 - <<'PYEOF' 2>/dev/null || true
+import json, os
+paths = [os.path.expanduser("~/.codeoss/data/Machine/settings.json"),
+         os.path.expanduser("~/.codeoss/data/User/settings.json")]
+keys = ("geminicodeassist.enable",
+        "cloudcode.geminiCodeAssist.enable",
+        "cloudcode.enableGeminiCodeAssist",
+        "geminicodeassist.inlineSuggestions.enableAuto",
+        "cloudcode.geminiCodeAssist.inlineSuggestions.enableAuto")
+for p in paths:
+    try:
+        with open(p) as f:
+            d = json.load(f)
+    except Exception:
+        continue
+    if not isinstance(d, dict):
+        continue
+    found = [k for k in keys if d.get(k) is False]
+    if found:
+        for k in found:
+            del d[k]
+        with open(p, "w") as f:
+            json.dump(d, f, indent=2)
+PYEOF
+
 # Start the portal in the background so the terminal stays free. Stop anything
 # already holding port 8080 first, however it was started, so running this again
 # always gives a fresh, working portal.
