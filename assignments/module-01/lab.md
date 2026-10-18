@@ -25,7 +25,7 @@ fixed portal is running on port 8081.
 
 For missing folders, an occupied port, or an older workspace, follow the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html). Your own two portal copies are the only authorized targets.
 
-![Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports](m01-workspace-map.svg)
+**Instructional image:** Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports.
 
 *Workspace map: a simplified instructional diagram, not a Cloud Shell screenshot. Commands and labels remain written in the steps above.*
 
@@ -35,18 +35,18 @@ For missing folders, an occupied port, or an older workspace, follow the [Cloud 
 2. Sign in with username `rmarsh` and password `password`. These fictional portal credentials are separate from your Google account.
 3. Check for **TechCorp Portal** in the top bar and **Customers** as the heading. Take **Capture 1**, saved as `m01-setup-before.png`.
 4. Return to Cloud Shell. Choose **Web Preview → Change port**, enter **8081**, and click **Change and Preview**. This is **fixed**, your working copy. Sign in separately with the same fictional credentials.
-![Cloud Shell Web Preview menu showing the selected port and Change port](m01-cloud-shell-preview-menu.jpg)
+**Instructional image:** Cloud Shell Web Preview menu showing the selected port and Change port.
 
 *Actual Cloud Shell controls: the Preview label remembers the last selected port (8081 here). Use Change port to select 8080 for site or 8081 for fixed.*
 
-![Change Preview Port dialog with Port Number set to 8081](m01-cloud-shell-port-8081.jpg)
+**Instructional image:** Change Preview Port dialog with Port Number set to 8081.
 
 *Enter 8081, then select Change and Preview to open fixed.*
 
 5. Check that both copies initially show the same labels. Keep both tabs open and check their ports before reloading or testing.
 6. In the editor, open `site/layout.php` and `site/index.php` to read the original labels. Leave these files unchanged.
 
-![Actual original portal customer list showing TechCorp Portal and Customers](m01-portal-original.jpg)
+**Instructional image:** Actual original portal customer list showing TechCorp Portal and Customers.
 
 *Reference screenshot from the local course portal: look for TechCorp Portal in the top bar and Customers above the table. Use your own captures in your submission.*
 
@@ -74,7 +74,7 @@ php -l fixed/index.php
 
 5. Resolve any syntax errors. Successful checks say `No syntax errors detected`; you still need the browser comparison below.
 
-![Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34](m01-cloud-shell-edit-label.jpg)
+**Instructional image:** Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34.
 
 *Actual Cloud Shell editor: fixed is expanded in the file list, with layout.php selected and its brand span visible. Change only the TechCorp Portal text inside the brand span. Your workspace folder name may differ.*
 
@@ -106,21 +106,21 @@ cp assignments/early-reports/m01-setup-starter.md reports/m01-setup.md
 4. Save the three captures using the supplied filenames. Record their filenames in the report and submit the screenshots as separate attachments.
 5. Save the report. Use the command palette (**Ctrl+Shift+P**, or **Cmd+Shift+P** on a Mac) to open **Markdown: Open Preview**. Check headings and code blocks. Local screenshots will not appear in Cloud Shell until uploaded there; keep them alongside your downloaded report.
 6. Right-click the report and choose **Download**. See [Writing in Markdown](../module-01/8_m01_writing-in-markdown.html) for formatting and file download help.
-7. In Canvas, choose **Start Assignment** (or **New Attempt**) and upload the six files below plus `assignment.md`. Use the PHP downloads saved **before** restoring the labels. Select **Submit Assignment** and check the confirmation and filenames.
+7. In Canvas, choose **Start Assignment** (or **New Attempt**) and upload the six files below plus `lab.md`. Use the PHP downloads saved **before** restoring the labels. Select **Submit Assignment** and check the confirmation and filenames.
 
 If blocked, record the exact action, which copy and port, and the error. Contact the instructor through Canvas Inbox or course Q&A; report only results you actually observed.
 
 Screenshots are separate image attachments. In the Markdown report, give each image's filename and describe what it proves. Upload those image files with the other submission files.
 
-## Include assignment.md for grading
+## Download and submit the lab instructions
 
-Submit these three parts together: **assignment.md**, your completed **m01-setup.md**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
+Submit these three parts together: **lab.md**, your completed **m01-setup.md**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
-1. In the IDE file list, expand `assignments`, then `module-01`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
+1. In the IDE file list, expand `assignments`, then `module-01`, and click `lab.md`. This is the supplied task description. Leave it unchanged.
+2. Right-click that `lab.md` file and choose **Download**. You can also [download lab.md here](assignment-files/lab.md).
 3. Download your completed report from `reports/` and the complete changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
-5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. The supplied instructions, your answers, and your actual code must travel together so grading can compare them.
+5. Before selecting **Submit Assignment**, confirm the upload list contains `lab.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
 
@@ -147,7 +147,7 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 
 ## What to submit
 
-Upload these files plus the supplied `assignment.md`:
+Upload these files plus the supplied `lab.md`:
 
 - `m01-setup.md`
 - Changed `layout.php`, downloaded from `fixed/` before restoring the label
