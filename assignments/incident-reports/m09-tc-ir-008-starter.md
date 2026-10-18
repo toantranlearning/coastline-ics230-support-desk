@@ -1,10 +1,22 @@
 # TC-IR-008 — Module 09 Incident Report
 
-Student: [Your name]
+Keep every [STUDENT] prompt. Write your answer directly below it after **Answer:**. Keep supplied case facts and section headings. In tables, write after Answer: in each prompted cell.
 
-Report date: [Actual date and time zone]
 
-Working status: [Not yet investigated / investigating / repaired and verified / open]
+Student: [STUDENT] Your name
+
+**Answer:**
+
+
+Report date: [STUDENT] Actual date and time zone
+
+**Answer:**
+
+
+Working status: [STUDENT] Not yet investigated / investigating / repaired and verified / open
+
+**Answer:**
+
 
 ## Supplied case background
 
@@ -17,7 +29,7 @@ These are fictional facts and an analyst determination supplied by the assignmen
 
 ## How to complete this starter
 
-Copy this file into `reports/` and remove `-starter` from the filename. Replace the bracketed prompts with your work. The Canvas assignment defines the repair scope, required tests, and submission requirements. Use only your own authorized lab. Capture evidence before changing code because the repair may remove the starting behavior. Submit the completed Markdown report and required attachments to Canvas.
+Copy this file into `reports/` and remove `-starter` from the filename. Keep the prompts and write your answers directly below them. The Canvas assignment defines the repair scope, required tests, and submission requirements. Use only your own authorized lab. Capture evidence before changing code because the repair may remove the starting behavior. Submit the completed Markdown report and required attachments to Canvas.
 
 Keep earlier incident reports as separate records. Where the assignment asks, reference prior incident IDs and add the new analysis; do not rewrite an earlier incident as though it contained evidence collected later. Later assignments require more detailed analysis and verification, rather than completion of every possible organizational field.
 
@@ -25,37 +37,55 @@ Keep earlier incident reports as separate records. Where the assignment asks, re
 
 **Assignment requirement:** The report ID, a severity with one sentence of justification, the discovery time, and you as the preparer.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 2. Executive summary
 
 **Assignment requirement:** Five to eight sentences a manager could read: whose account was reached, how, what the attacker could see, the root cause in one plain sentence, and whether sign-in is fixed. No code.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 3. Systems and data affected
 
 **Assignment requirement:** The `auth.php` sign-in and the session it issues; the `users` table and its `password_md5` column; the customer records a rep account can read, named by category.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 4. Timeline of events
 
 **Assignment requirement:** The run of failed sign-ins, the one that succeeded, the TC-IR-001 database copy, and your actions, each with its source.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 5. Detection and analysis
 
 **Assignment requirement:** 5.1: the rep's report and the request log. 5.2: the three weaknesses in your own words, each with its CWE from the lecture, and why each existed. 5.3: what the records cannot tell you, such as which customer records were opened and how many other accounts were tried.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 6. Response actions
 
 **Assignment requirement:** 6.1: the stopgap, a reset of the rep's password, labelled as a mitigation. 6.2: the four changes from Part 2, with the threshold and window you chose and the per-account trade-off. 6.3: how a locked-out user gets back in.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 7. Confirmation of remediation, annotated
 
@@ -63,26 +93,40 @@ Keep earlier incident reports as separate records. Where the assignment asks, re
 
 | Check performed | Before repair | After repair | What the evidence proves and its limits | Evidence file or excerpt |
 |---|---|---|---|---|
-| [Required check] | [Observed result] | [Observed result] | [Supported conclusion and remaining uncertainty] | [Reference] |
+| [STUDENT] Required check<br>Answer:  | [STUDENT] Observed result<br>Answer:  | [STUDENT] Observed result<br>Answer:  | [STUDENT] Supported conclusion and remaining uncertainty<br>Answer:  | [STUDENT] Reference<br>Answer:  |
 
 ## 8. Notification determination
 
 **Assignment requirement:** Whether the attacker could reach customer tax identifiers, who makes the call on notifying, and the reason for the call you record.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 9. Post-incident actions
 
 **Assignment requirement:** The OWASP category you worked under, by name, and one corrective action from 5.3.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## 10. Closure and attestation
 
 **Assignment requirement:** Your name and the date; closure only if section 7 is complete.
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[STUDENT] Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.
+
+**Answer:**
+
 
 ## Sources and assistance
 
-[Name the technical sources you relied on. Disclose AI assistance as the syllabus requires, and identify how you checked generated code or claims.]
+[STUDENT] Name the technical sources you relied on. Disclose AI assistance as the syllabus requires, and identify how you checked generated code or claims.
+
+**Answer:**
+
+
+Screenshots are separate image attachments. In this report, identify each screenshot by filename and explain what it demonstrates; upload the image files alongside the report.
