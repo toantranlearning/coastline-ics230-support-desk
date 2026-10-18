@@ -1,12 +1,26 @@
 # M01 - Launch Course Environment
 
+## Downloads and instructions
+
+Start here. These are all the supplied files for this assignment.
+
+| File | Download and use |
+|---|---|
+| Word report | Download the accessible Word report template from this module’s Canvas assignment. Open it in Word or Word Online and save your own copy. |
+| Task instructions | [Download assignment.md](assignment-files/assignment.md). This is the supplied copy of these instructions; keep it unchanged and submit it with your work. |
+
+The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use [Word Reports and Assignment Files](../module-01/8_m01_writing-in-markdown.html). That guide also lists all current Word report and instruction downloads together.
+
+Your changed **layout.php and index.php** must come from your own working copy. Download the complete edited file(s) from Cloud Shell as directed below; they are not supplied completed answers.
+
+
 ## What you are doing, and why
 
 Set up two copies of the TechCorp portal: **site** is the original you read and compare, and **fixed** is the working copy you change throughout the term. Practice the read, change, prove, report routine with two harmless labels. Plan about an hour.
 
 ## Your report template
 
-Download the accessible Word report template from this module’s Canvas assignment.
+Use the Word report in **Downloads and instructions** above.
 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m01-setup.docx`.
 2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
@@ -119,7 +133,7 @@ Place screenshots in the Word report beside their prompts, with a caption and al
 Submit these three parts together: **assignment.md**, your completed **m01-setup.docx**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
 1. In the IDE file list, expand `assignments`, then `module-01`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
+2. Right-click that `assignment.md` file and choose **Download**. The same file is linked in **Downloads and instructions** at the top.
 3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.

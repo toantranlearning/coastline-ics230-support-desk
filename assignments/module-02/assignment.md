@@ -1,5 +1,19 @@
 # M02 - Assignment: Block Direct Access to Sensitive Data Files
 
+## Downloads and instructions
+
+Start here. These are all the supplied files for this assignment.
+
+| File | Download and use |
+|---|---|
+| Word report | [Get the Word report from Canvas](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html#downloads-for-modules-1-3). Open it in Word or Word Online and save your own copy. |
+| Task instructions | [Download assignment.md](assignment.md). This is the supplied copy of these instructions; keep it unchanged and submit it with your work. |
+
+The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use [Word Reports and Assignment Files](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html). That guide also lists all current Word report and instruction downloads together.
+
+Your changed **router.php** must come from your own working copy. Download the complete edited file(s) from Cloud Shell as directed below; they are not supplied completed answers.
+
+
 ## One assignment: Read → Fix → Prove → Report
 
 Submit the supplied Word report with your brief additions and your changed `fixed/router.php` for this activity. The module quiz remains separate.
@@ -16,7 +30,7 @@ The supplied corporate report contains the case background, management narrative
 
 ## Your report template
 
-Download the accessible Word report template from this module’s assignment in Canvas.
+Use the Word report in **Downloads and instructions** above.
 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m02-design-audit.docx`.
 2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
@@ -40,7 +54,7 @@ Use the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.htm
 
 ## Step 2: Open your report
 
-Download the Word template linked above, save your copy, and fill in your name and AI disclosure. Complete its prompts as you follow the steps below. Write answers after **Answer:** and paste evidence into the matching section.
+Download the Word template listed in **Downloads and instructions** above, save your copy, and fill in your name and AI disclosure. Complete its prompts as you follow the steps below. Write answers after **Answer:** and paste evidence into the matching section.
 
 ## Step 3: Download the files without signing in
 
@@ -113,7 +127,7 @@ php -l fixed/router.php
 
 7. Look for `No syntax errors detected in fixed/router.php`. Copy the actual output into your report. If PHP reports an error, compare your pasted block with the example above, check its braces and semicolons, save, and run the command again. A clean syntax check means the file can be read by PHP; the next step checks whether it blocks the downloads.
 
-![Cloud Shell IDE showing fixed/router.php with the path assignment and blank insertion line before site-root routing](m02-ide-rule-location.jpg)
+Instructional image description: Cloud Shell IDE showing fixed/router.php with the path assignment and blank insertion line before site-root routing.
 
 *Actual Cloud Shell IDE: fixed is expanded on the left and router.php is selected. Insert the supplied rule on the blank line after $path is set, before the site-root branch. The exact code above remains selectable text.*
 
@@ -164,7 +178,7 @@ Place screenshots in the Word report beside their prompts, with a caption and al
 Submit these three parts together: **assignment.md**, your completed **m02-design-audit.docx**, and your changed **router.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
 1. In the IDE file list, expand `assignments`, then `module-02`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
+2. Right-click that `assignment.md` file and choose **Download**. The same file is linked in **Downloads and instructions** at the top.
 3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.

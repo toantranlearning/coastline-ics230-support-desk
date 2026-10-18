@@ -1,12 +1,26 @@
 # M01 - Launch Course Environment
 
+## Downloads and instructions
+
+Start here. These are all the supplied files for this assignment.
+
+| File | Download and use |
+|---|---|
+| Word report | [Get the Word report from Canvas](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html#downloads-for-modules-1-3). Open it in Word or Word Online and save your own copy. |
+| Task instructions | [Download assignment.md](assignment.md). This is the supplied copy of these instructions; keep it unchanged and submit it with your work. |
+
+The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use [Word Reports and Assignment Files](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html). That guide also lists all current Word report and instruction downloads together.
+
+Your changed **layout.php and index.php** must come from your own working copy. Download the complete edited file(s) from Cloud Shell as directed below; they are not supplied completed answers.
+
+
 ## What you are doing, and why
 
 Set up two copies of the TechCorp portal: **site** is the original you read and compare, and **fixed** is the working copy you change throughout the term. Practice the read, change, prove, report routine with two harmless labels. Plan about an hour.
 
 ## Your report template
 
-Download the accessible Word report template from this module’s assignment in Canvas.
+Use the Word report in **Downloads and instructions** above.
 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m01-setup.docx`.
 2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
@@ -34,7 +48,7 @@ fixed portal is running on port 8081.
 
 For missing folders, an occupied port, or an older workspace, follow the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html). Your own two portal copies are the only authorized targets.
 
-![Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports](m01-workspace-map.svg)
+Instructional image description: Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports.
 
 *Workspace map: a simplified instructional diagram, not a Cloud Shell screenshot. Commands and labels remain written in the steps above.*
 
@@ -44,18 +58,18 @@ For missing folders, an occupied port, or an older workspace, follow the [Cloud 
 2. Sign in with username `rmarsh` and password `password`. These fictional portal credentials are separate from your Google account.
 3. Check for **TechCorp Portal** in the top bar and **Customers** as the heading. Take **Capture 1**, saved as `m01-setup-before.png`.
 4. Return to Cloud Shell. Choose **Web Preview → Change port**, enter **8081**, and click **Change and Preview**. This is **fixed**, your working copy. Sign in separately with the same fictional credentials.
-![Cloud Shell Web Preview menu showing the selected port and Change port](m01-cloud-shell-preview-menu.jpg)
+Instructional image description: Cloud Shell Web Preview menu showing the selected port and Change port.
 
 *Actual Cloud Shell controls: the Preview label remembers the last selected port (8081 here). Use Change port to select 8080 for site or 8081 for fixed.*
 
-![Change Preview Port dialog with Port Number set to 8081](m01-cloud-shell-port-8081.jpg)
+Instructional image description: Change Preview Port dialog with Port Number set to 8081.
 
 *Enter 8081, then select Change and Preview to open fixed.*
 
 5. Check that both copies initially show the same labels. Keep both tabs open and check their ports before reloading or testing.
 6. In the editor, open `site/layout.php` and `site/index.php` to read the original labels. Leave these files unchanged.
 
-![Actual original portal customer list showing TechCorp Portal and Customers](m01-portal-original.jpg)
+Instructional image description: Actual original portal customer list showing TechCorp Portal and Customers.
 
 *Reference screenshot from the local course portal: look for TechCorp Portal in the top bar and Customers above the table. Use your own captures in your submission.*
 
@@ -83,7 +97,7 @@ php -l fixed/index.php
 
 5. Resolve any syntax errors. Successful checks say `No syntax errors detected`; you still need the browser comparison below.
 
-![Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34](m01-cloud-shell-edit-label.jpg)
+Instructional image description: Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34.
 
 *Actual Cloud Shell editor: fixed is expanded in the file list, with layout.php selected and its brand span visible. Change only the TechCorp Portal text inside the brand span. Your workspace folder name may differ.*
 
@@ -119,7 +133,7 @@ Place screenshots in the Word report beside their prompts, with a caption and al
 Submit these three parts together: **assignment.md**, your completed **m01-setup.docx**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
 1. In the IDE file list, expand `assignments`, then `module-01`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
+2. Right-click that `assignment.md` file and choose **Download**. The same file is linked in **Downloads and instructions** at the top.
 3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.

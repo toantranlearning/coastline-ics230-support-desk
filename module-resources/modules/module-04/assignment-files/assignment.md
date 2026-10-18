@@ -1,5 +1,19 @@
 # M03 - Assignment: Fix Customer Search Rendering
 
+## Downloads and instructions
+
+Start here. These are all the supplied files for this assignment.
+
+| File | Download and use |
+|---|---|
+| Word report | Download the accessible Word report template from this module’s Canvas assignment. Open it in Word or Word Online and save your own copy. |
+| Task instructions | [Download assignment.md](../assignment-files/assignment.md). This is the supplied copy of these instructions; keep it unchanged and submit it with your work. |
+
+The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use [Word Reports and Assignment Files](../../module-01/8_m01_writing-in-markdown.html). That guide also lists all current Word report and instruction downloads together.
+
+Your changed **customer.php** must come from your own working copy. Download the complete edited file(s) from Cloud Shell as directed below; they are not supplied completed answers.
+
+
 ## The problem and your objective
 
 The search page treats a stored customer name as HTML: `<b>Test Account</b>` appears bold instead of displaying its angle brackets. Your job is to make the browser display customer data as text and refuse invalid search inputs. This practices input validation and output encoding under **OWASP Top 10:2025 A05 Injection**.
@@ -14,7 +28,7 @@ A representative reported the bold customer name and an error when searching for
 
 ## Your report template
 
-Download the accessible Word report template from this module’s Canvas assignment.
+Use the Word report in **Downloads and instructions** above.
 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m03-tc-ir-002.docx`.
 2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
@@ -33,11 +47,11 @@ bash scripts/start.sh
 
 4. Wait for both startup messages. Open **Web Preview → Preview on port 8080** for the original site. Use **Web Preview → Change port → 8081** for fixed.
 5. Sign in separately to each with username `rmarsh` and password `password`. Check the port before testing. Read original files in `site/`; edit only `fixed/`.
-6. Download the Word report linked above from Canvas and save your working copy on your computer. Open it in Word or Word Online.
+6. Download the Word report listed in **Downloads and instructions** above from Canvas and save your working copy on your computer. Open it in Word or Word Online.
 
 7. Open your Word report and complete the name, date/time zone, and disclosure prompts.
 
-For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html). Test only your own portals under the [Rules Of Engagement](../module-01/18_m01_rules-of-engagement.html).
+For startup help, use the [Cloud Shell Guide](../../module-01/6_m01_working-in-google-cloud-shell.html). Test only your own portals under the [Rules Of Engagement](../../module-01/18_m01_rules-of-engagement.html).
 
 ## Step 2: Reproduce the rendering problem
 
@@ -47,7 +61,7 @@ For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-goog
 4. Click **Customers** in the navigation. The same name should show its literal `<b>` tags. This comparison shows that one page already handles the stored name safely.
 5. Open `site/index.php` in the editor. Search for `display_name` and find the expression using `htmlspecialchars`. Open `site/customer.php` and find the name inside the results link. In report section 5, explain the difference in one sentence.
 
-![Actual original customer search for Test showing Test Account as bold text without visible markup tags](m03-search-before.jpg)
+Instructional image description: Actual original customer search for Test showing Test Account as bold text without visible markup tags.
 
 *Reference screenshot from the local original portal: the stored name renders as bold text. After your repair, its literal angle brackets must be visible. Collect your own before-and-after evidence.*
 
@@ -142,7 +156,7 @@ Place screenshots in the Word report beside their prompts, with a caption and al
 Submit these three parts together: **assignment.md**, your completed **m03-tc-ir-002.docx**, and your changed **customer.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
 1. In the IDE file list, expand `assignments`, then `module-03`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
+2. Right-click that `assignment.md` file and choose **Download**. The same file is linked in **Downloads and instructions** at the top.
 3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
@@ -164,7 +178,7 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 
 ## Grading rubric
 
-Use the shared [Assignment rubric](../module-01/22_m01_assignment-rubric.html). The activity-specific evidence and source-file requirements are listed above.
+Use the shared [Assignment rubric](../../module-01/22_m01_assignment-rubric.html). The activity-specific evidence and source-file requirements are listed above.
 
 ## Explain the impact
 
