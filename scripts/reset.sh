@@ -1,45 +1,22 @@
 #!/usr/bin/env bash
-# Put the portal back to a known-good state and rebuild its database.
-#
-#   ./scripts/reset.sh                     discard changes you have not saved
-#   ./scripts/reset.sh --undo              step back one saved change
-#   ./scripts/reset.sh --baseline          go all the way back to the original
-#
-# This rewrites files. Anything you have not saved with save.sh is lost.
-set -e
+# Restore only fixed/. Never reset the repository or touch reports/ and site/.
+set -euo pipefail
 cd "$(dirname "$0")/.."
-
-confirm() {
-  printf "%s Continue? [y/N] " "$1"
-  read -r a
-  [ "$a" = y ] || [ "$a" = Y ] || { echo "Cancelled."; exit 0; }
-}
-
 case "${1:-}" in
-  "")
-    confirm "This discards changes you have not saved, back to your last save."
-    git checkout -- .
-    ;;
-  --undo)
-    saves=$(git rev-list baseline..HEAD --count 2>/dev/null || echo 0)
-    if [ "$saves" -eq 0 ]; then
-      echo "You are already at the original; there is nothing to undo."
-      exit 0
-    fi
-    confirm "This steps back one saved change."
-    git reset --hard HEAD~1 >/dev/null
-    ;;
-  --baseline)
-    confirm "This goes all the way back to the original."
-    git fetch --tags --quiet 2>/dev/null || true
-    git reset --hard baseline >/dev/null
-    ;;
-  *)
-    echo "Unknown option: $1"
-    echo "Try: ./scripts/reset.sh | --undo | --baseline"
-    exit 1
-    ;;
+  ""|--baseline) ;;
+  *) echo "Usage: bash scripts/reset.sh [--baseline]"; exit 1 ;;
 esac
-
-rm -f data/portal.sqlite
-echo "Done. The database rebuilds the next time you open a page."
+echo "This replaces fixed/ with site/, including the starting database state. All repairs in fixed/ will be lost."
+echo "Download submitted work first. site/ and reports/ are preserved."
+printf 'Continue? [y/N] '
+read -r answer
+[[ "$answer" = y || "$answer" = Y ]] || { echo "Cancelled."; exit 0; }
+# Move aside rather than delete so accidental resets can be recovered.
+mkdir -p .lab-runtime
+backup="$(mktemp -d "$PWD/.lab-runtime/fixed-reset-XXXXXXXX")"
+mv fixed "$backup/fixed"
+cp -a site fixed
+rm -f fixed/data/portal.sqlite fixed/data/portal.sqlite-wal fixed/data/portal.sqlite-shm
+printf 'Previous fixed copy kept in %s/fixed
+' "$backup"
+echo "Run bash scripts/start.sh to reopen both portals."

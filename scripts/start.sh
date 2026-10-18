@@ -1,123 +1,42 @@
 #!/usr/bin/env bash
-#
-# One-run setup and launcher for the TechCorp portal in Google Cloud Shell.
-# It checks what is already done and only does the missing parts, so it is safe
-# to run every time.
-
-# Where the working copy lives (its natural clone path).
-BASE="$HOME/cloudshell_open/coastline-ics230-support-desk"
-# This script sits in scripts/, so the project root is its parent.
-SELF="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-# Where the terminal was when this was run, before any cd, so we can tell if the
-# cleanup below removed the folder it is sitting in.
-LAUNCH_DIR="$PWD"
-
-# Keep a single copy. Clicking the launch link more than once makes extra
-# folders whose names are the repo name plus a suffix (name-0, name-1, ...).
-# Step out of the way first, then remove every copy except the canonical one,
-# so you always end up with exactly one. (The editor's file list may still show
-# a removed folder until you refresh it, but it is gone on disk.)
-cd "$HOME/cloudshell_open" 2>/dev/null || cd "$HOME"
-
-# A canonical folder emptied out (a "start over" that deleted the files but left
-# the folder behind) must not win over a fresh clone.
-if [ -d "$BASE" ] && [ ! -f "$BASE/scripts/start.sh" ]; then
-  rm -rf "$BASE"
+# Run from any directory. Never delete another checkout or overwrite repairs.
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+if ! php -r 'exit(in_array("sqlite", PDO::getAvailableDrivers(), true) ? 0 : 1);' ; then
+  if command -v apt-get >/dev/null && command -v sudo >/dev/null; then
+    sudo apt-get update -qq
+    sudo apt-get install -y php-sqlite3
+  fi
 fi
-
-# If there is no canonical copy yet but we launched from a suffixed one,
-# promote it to the canonical name.
-if [ ! -d "$BASE" ] && [ -d "$SELF" ] && [ "$SELF" != "$BASE" ]; then
-  mv "$SELF" "$BASE"
-fi
-
-# Remove any folder that is the repo name plus a suffix.
-for d in "$BASE"*; do
-  [ -d "$d" ] && [ "$d" != "$BASE" ] && rm -rf "$d" && echo "Removed a duplicate copy: $(basename "$d")"
+php -r 'exit(in_array("sqlite", PDO::getAvailableDrivers(), true) ? 0 : 1);'  || { echo "PHP PDO SQLite is required; contact your instructor."; exit 1; }
+mkdir -p .lab-runtime reports
+for copy in site fixed; do
+  [ -f "$copy/router.php" ] || { echo "Missing $copy/router.php; reopen the correct course folder."; exit 1; }
+  if [ "$copy" = site ]; then port=8080; else port=8081; fi
+  pidfile="$ROOT/.lab-runtime/$copy.pid"
+  if [ -f "$pidfile" ]; then
+    pid="$(cat "$pidfile")"
+    if [[ "$pid" =~ ^[0-9]+$ ]] && ps -p "$pid" -o command= | grep -F -- "$ROOT/$copy/router.php" >/dev/null; then
+      kill "$pid" 2>/dev/null || true
+      sleep 1
+    fi
+  fi
+  (
+    cd "$ROOT/$copy"
+    # Each process reads only its own environment and database.
+    if [ -f .env ]; then set -a; . ./.env; set +a; fi
+    nohup php -d opcache.enable=0 -d opcache.enable_cli=0 -d "session.name=TECHCORP_$copy" -S "0.0.0.0:$port" -t "$ROOT/$copy" "$ROOT/$copy/router.php" > "$ROOT/.lab-runtime/$copy.log" 2>&1 &
+    echo $! > "$pidfile"
+  )
+  sleep 1
+  pid="$(cat "$pidfile")"
+  if ! kill -0 "$pid" 2>/dev/null || grep -q 'Failed to listen' ".lab-runtime/$copy.log"; then
+    echo "Could not start $copy on port $port. See .lab-runtime/$copy.log."
+    cat ".lab-runtime/$copy.log"
+    exit 1
+  fi
+  echo "$copy portal is running on port $port."
 done
-
-cd "$BASE" 2>/dev/null || cd "$SELF"
-
-# Dependencies: only add what is missing. Cloud Shell's PHP ships without the
-# SQLite driver and forgets anything outside your home between sessions, so
-# check for it and add it when it is not there.
-if ! php -m 2>/dev/null | grep -qi '^pdo_sqlite$'; then
-  echo "Enabling the SQLite database driver..."
-  sudo apt-get update -qq >/dev/null 2>&1 || true
-  sudo apt-get install -y php-sqlite3 >/dev/null 2>&1 || true
-fi
-
-# An earlier version of this script saved editor settings that turned Gemini
-# Code Assist off, and those settings stay in your home folder. Remove them so
-# the assistant is back to normal. Only those exact settings, and only where they
-# are set to off, are removed; a settings file this cannot read is left alone.
-python3 - <<'PYEOF' 2>/dev/null || true
-import json, os
-paths = [os.path.expanduser("~/.codeoss/data/Machine/settings.json"),
-         os.path.expanduser("~/.codeoss/data/User/settings.json")]
-keys = ("geminicodeassist.enable",
-        "cloudcode.geminiCodeAssist.enable",
-        "cloudcode.enableGeminiCodeAssist",
-        "geminicodeassist.inlineSuggestions.enableAuto",
-        "cloudcode.geminiCodeAssist.inlineSuggestions.enableAuto")
-for p in paths:
-    try:
-        with open(p) as f:
-            d = json.load(f)
-    except Exception:
-        continue
-    if not isinstance(d, dict):
-        continue
-    found = [k for k in keys if d.get(k) is False]
-    if found:
-        for k in found:
-            del d[k]
-        with open(p, "w") as f:
-            json.dump(d, f, indent=2)
-PYEOF
-
-# Start the portal in the background so the terminal stays free. Stop anything
-# already holding port 8080 first, however it was started, so running this again
-# always gives a fresh, working portal.
-freed=""
-command -v fuser >/dev/null 2>&1 && fuser -k 8080/tcp >/dev/null 2>&1 && freed=1
-pkill -f 'php -S .*:8080' >/dev/null 2>&1 && freed=1
-[ -n "$freed" ] && { sleep 1; echo "Stopped an earlier portal that was still running."; }
-LOG=/tmp/techcorp-portal.log
-
-# Local settings. Keys and other secrets live in .env, which never ships, and
-# the helpers in lib/ read them from the environment. Load the file when there
-# is one, so the portal sees them. After you change .env, run this again.
-if [ -f .env ]; then
-  set -a
-  . ./.env
-  set +a
-fi
-
-# The built-in server has no configuration file, so router.php carries the
-# routing rules. Use it when it is there.
-ROUTER=""
-[ -f router.php ] && ROUTER="router.php"
-nohup php -S 0.0.0.0:8080 $ROUTER >"$LOG" 2>&1 &
-disown 2>/dev/null
-sleep 1
-if pgrep -f 'php -S 0.0.0.0:8080' >/dev/null 2>&1; then
-  echo
-  echo "The portal is running on port 8080 in the background. Your terminal is free."
-  echo "Click Web Preview and choose port 8080."
-  echo "(Server log: $LOG. To stop the portal: pkill -f 'php -S')"
-else
-  echo "The portal did not start. The last lines of its log:"
-  tail -5 "$LOG" 2>/dev/null
-  exit 1
-fi
-
-# If this was run from a duplicate folder that just got removed, the terminal is
-# now sitting in a folder that no longer exists. We cannot move the terminal for
-# you (a script cannot change its parent shell), so say what to run.
-if [ ! -d "$LAUNCH_DIR" ] || [ "$LAUNCH_DIR" != "$BASE" ]; then
-  echo
-  echo "Your terminal is not in the project folder. Move into it so the other"
-  echo "commands work:"
-  echo "  cd $BASE"
-fi
+echo "Web Preview: 8080 = site (original); Change port to 8081 = fixed (your repairs)."
+echo "Edit fixed/; keep reports/ at the workspace root. Startup preserves both databases and all repairs."

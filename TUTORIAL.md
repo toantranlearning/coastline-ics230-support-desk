@@ -1,87 +1,39 @@
-# TechCorp Customer Portal
+# Launch the two-copy TechCorp workspace
 
-<walkthrough-tutorial-duration duration="15"></walkthrough-tutorial-duration>
-
-Welcome to the **TechCorp customer portal**, the internal tool the support desk uses to look up customers and log call notes. You are looking at your own private copy. This guide gets it running and shows you around.
-
-You are signed in to Google, which is what makes this Cloud Shell yours. Nobody else can see or reach this copy, and you do **not** need a credit card or a paid trial for any of it. If a banner ever offers "$300 in free credits," close it.
-
-**First, start the portal.** Click the run icon on the command below:
+Launch the course repository in Google Cloud Shell using the course launch link. Use the same Google account on return visits and reopen the existing folder. From the workspace root, run:
 
 ```bash
 bash scripts/start.sh
 ```
 
-Run this **every time** you open the project, not just the first time. It puts your copy in order, doing only what is still needed:
+Wait for both startup messages. **Web Preview → Preview on port 8080** opens `site`, the original portal. For your working portal, choose **Web Preview → Change port**, enter **8081**, and open it. Keep the two tabs labeled by port; check the address before every test.
 
-- keeps exactly **one copy** of the project (removing any extras from a second click on the launch link),
-- adds the small **database driver** Cloud Shell needs (the first run takes a few extra seconds for this),
-- and starts a fresh **web server** on port 8080. If a server was already running, it restarts it cleanly.
-
-When it says the portal is running on port 8080, you are set. It keeps running in the background, so your terminal stays free for other commands. Click **Next** to see what you are looking at.
-
-## What you are looking at
-
-The screen has three parts:
-
-- <walkthrough-editor-spotlight spotlightId="file-explorer">The file list on the left</walkthrough-editor-spotlight> is every file in the project. Click a file to open it.
-- The **editor** in the middle is where you read and change code.
-- The black **terminal** across the bottom is where you run commands. It is a free Linux computer that Google runs for you; the terminal is how you talk to it.
-
-Everything you do here stays in your own copy. Nothing you change touches anyone else.
-
-<walkthrough-footnote>Click the launch link only once. If you click it again later, Cloud Shell makes a second copy. That is fine: the start command you just ran removes extra copies and keeps one. Next time, just reopen this Cloud Shell tab.</walkthrough-footnote>
-
-## See the portal
-
-The portal is running inside your Cloud Shell, so you open it through Web Preview. Click <walkthrough-spotlight-pointer spotlightId="devshell-web-preview-button">Web Preview</walkthrough-spotlight-pointer> (top right of the toolbar), then **Preview on port 8080**.
-
-A new tab opens on the TechCorp sign-in page. Only you can open that tab; it is tied to your Google sign-in.
-
-Sign in with the support-rep account:
-
-| Username | Password |
-|---|---|
-| `rmarsh` | `password` |
-
-You land on the customer list. Look around: the customer list, a customer's account details, the call notes, your profile. This is the internal tool the support desk works in day to day.
-
-<walkthrough-footnote>These are development credentials. Never reuse them anywhere, and never put real data in a development copy.</walkthrough-footnote>
-
-## Change something and see it update
-
-The everyday loop is: change a file, save, reload.
-
-1. Open <walkthrough-editor-select-regex filePath="layout.php" regex='class="brand">TechCorp Portal'>layout.php with the site name selected</walkthrough-editor-select-regex>. That line sets the name shown in the bar at the top of every page.
-2. Change `TechCorp Portal` to anything you like and save with **Ctrl-S** (or **Cmd-S** on a Mac).
-3. Switch to the portal tab and **reload** it. The top bar shows your new name.
-
-You did not restart anything. The server is already running and reads your files each time the page loads, so saving a file is all it takes.
-
-## Undo a change and reset
-
-To throw a change away, open the <walkthrough-editor-spotlight spotlightId="activity-bar-scm">Source Control</walkthrough-editor-spotlight> panel: it lists every file you changed, and clicking a file shows exactly what changed, old on the left and new on the right. Hover the **Changes** heading and click **Discard All Changes** to put every file back to the original. Reload the portal tab and your change is gone.
-
-That is your undo button. The terminal does the same, and this form goes all the way back to the original copy:
-
-```bash
-bash scripts/reset.sh --baseline
+```text
+site/       Original source: read and reproduce here; leave it unchanged.
+fixed/      Working source: edit here; repairs accumulate throughout the term.
+reports/    Reports, diagrams, and evidence; outside both served folders.
+scripts/    Startup, save, comparison, and scoped reset helpers.
 ```
 
-The portal keeps running through all of these; you never need to stop it to run a command.
+Both portals initially contain the same PHP, CSS, API, library, and seed files. Each creates its own `data/portal.sqlite`. Startup never copies one database or source tree over the other. Each server uses its own PHP session-cookie name. Sign in separately in each preview tab; use the supplied fictional `rmarsh` / `password` account. Never reuse these credentials elsewhere.
 
-**To start completely over.** For a clean slate, run the command below. It removes every copy, fetches a brand-new one, and starts it. It asks you to confirm first, because it throws away all your changes.
+1. **Read:** open `site/` files and reproduce the assigned behavior on port 8080.
+2. **Fix:** open the matching file under `fixed/` and make the assigned change. Save it.
+3. **Prove:** run the hostile request against both ports; on 8081 also verify legitimate use. A syntax check such as `php -l fixed/router.php` checks parsing, not behavior.
+4. **Report:** record actual commands and results in `reports/`. Download the report, evidence, and every changed source file from `fixed/`; submit them to Canvas as the assignment directs. Keep the repairs in `fixed/` for later modules.
 
-```bash
-bash scripts/nukeitall.sh
-```
+## First setup exercise
 
-If even that will not run, delete every folder in the file list (right-click each folder, **Delete**) and click the launch link again.
+Open both previews and sign in to each. Change only `fixed/layout.php` (`TechCorp Portal` to your own label) and `fixed/index.php` (`Customers` to `My Customers`). Reload both tabs. Port 8080 must remain original; port 8081 must show both edits. Capture the original, changed, and restored working views. After capturing the edits, restore just those two labels by editing the text back and saving. Do not reset the entire working copy. Your submitted files for this setup exercise are the two changed PHP files downloaded **before** restoring, the report, and the three captures.
 
-## You are set up
+## Returning and recovering
 
-You can now run the portal, open it in the browser, change it, and reset it. That is the whole environment.
+Run `bash scripts/start.sh` from the workspace root each session. It starts both copies and preserves their files and databases. `bash scripts/diff.sh` compares the two source trees. `bash scripts/save.sh "describe repair"` commits only working source; reports and runtime databases are excluded.
 
-<walkthrough-footnote>To bring this panel back any time, run `teachme TUTORIAL.md` in the terminal.</walkthrough-footnote>
+`bash scripts/reset.sh --baseline` asks before replacing **all of fixed/** with the original source and a fresh database. It preserves `site/` and `reports/` and keeps the previous `fixed/` under `.lab-runtime/` for recovery. Download work first. Restore an individual edit manually when possible so earlier repairs remain intact. Source Control's Discard All Changes is not a course reset.
 
-<walkthrough-conclusion-trophy></walkthrough-conclusion-trophy>
+## Existing single-folder workspace
+
+Before updating an old checkout, download changed source files and reports. After updating to this layout, compare your saved changes with `fixed/` and reapply the intended repairs there. Old root-level PHP files or databases are not used by these servers. Startup does not delete duplicate checkouts, migrate unreviewed changes, or overwrite work. Contact the instructor if you are unsure which copy holds your work.
+
+Only your own course portals are authorized for testing. Use manual browser or curl requests; do not run scanners. No paid trial or credit card is required.

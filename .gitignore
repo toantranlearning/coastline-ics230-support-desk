@@ -1,14 +1,11 @@
-# Generated on first run from data/seed.sql. Never commit the database.
-data/portal.sqlite
-
-# Local environment. Keys and secrets belong here, and this file never ships.
-.env
-
-# Your own write-ups and working notes. They stay on your machine.
+# Independent runtime state; source changes in fixed/ remain visible to Git.
+site/data/portal.sqlite*
+fixed/data/portal.sqlite*
+site/.env
+fixed/.env
 reports/*
 !reports/README.md
-
-# Editor and OS noise
+.lab-runtime/
 .vscode/
 .idea/
 *.swp

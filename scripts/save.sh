@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-# Save your work so far, as one save point you can come back to.
-# Usage: ./scripts/save.sh "what you changed"
-set -e
+set -euo pipefail
 cd "$(dirname "$0")/.."
-msg="${1:-work in progress}"
-git add -A
-git commit -m "$msg" >/dev/null 2>&1 && echo "Saved: $msg" || echo "Nothing new to save."
+git add -- fixed
+git diff --cached --quiet -- fixed && { echo "No changed source files in fixed/ to save."; exit 0; }
+git commit --only -m "${1:-Save portal repairs}" -- fixed
