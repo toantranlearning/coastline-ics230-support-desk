@@ -111,8 +111,8 @@ The total required materials cost for this course is **$0.00**. No textbook purc
 
 | **Component** | **Weight** | **Count** |
 |---|---|---|
-| Quizzes | 40% | 16 graded quizzes |
-| Assignments (reports and repairs, labs, analyses, both midterm parts, and project submissions) | 40% | 19 |
+| Quizzes | 30% | 16 graded quizzes |
+| Assignments (reports and repairs, labs, analyses, both midterm parts, and project submissions) | 50% | 19 |
 | Forums (introductions and seven case studies) | 20% | 8 |
 
 **Module assignments.** In eleven modules (03 to 06, 08 to 11, and 13 to 15) a TechCorp security incident arrives against one of the portal's features, and the assignment has the same two parts each time. First, the report: students read the supplied corporate case, then add actual observations, repair reasoning, verification, and revision history to its marked entries. Second, the hands-on fix: the student reproduces the incident in their own course environment, repairs the code in the editor, and proves the fix holds, so that the hostile request fails afterward while legitimate use still works. The report and the fix are submitted together. The Module 01 setup lab report, the Module 02 design-and-repair assignment, and the Module 07 scan reading and tool comparison are graded in this category.
@@ -123,7 +123,7 @@ The total required materials cost for this course is **$0.00**. No textbook purc
 
 **Discussion forums.** In Module 01 the forum is the introductions, graded complete or incomplete. Each odd-numbered module from 03 to 15 has one case forum about one real incident whose root cause is that module's topic. Students say what the organization did wrong in the module's own vocabulary, name the specific control that would have prevented it, and reply substantively to a classmate. The initial post is due Friday and the reply Sunday.
 
-**Module quizzes.** Ten multiple-choice items per module drawn from that module's lecture page, one attempt, graded automatically in Canvas. The appendix quiz is practice.
+**Module quizzes.** Apply the module’s security concepts and controls. Quizzes are untimed, allow unlimited attempts until the posted due date, and are graded automatically in Canvas. The appendix quiz is ungraded practice.
 
 Module assignments, the design project, and the case forums are evaluated against the rubrics on the *How Your Work Is Graded* page. Feedback is returned within one week of the due date through the Canvas rubric, submission annotations, or assignment comments. Quizzes return results automatically.
 
