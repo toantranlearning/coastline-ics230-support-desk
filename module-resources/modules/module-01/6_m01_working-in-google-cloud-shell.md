@@ -8,7 +8,7 @@ Sign in to Google first. On your first visit, use **Set up and launch** and conf
 
 - **site/** contains the original portal. Read and reproduce the starting defect here; leave its files unchanged.
 - **fixed/** contains your working portal. Make repairs here and retain them across the term.
-- **reports/** holds your write-ups and evidence, outside both served portals.
+- **reports/** holds saved command output and working evidence, outside both served portals. Your Word report is downloaded from Canvas and edited separately in Word or Word Online.
 
 Each portal has its own database under its own `data/` directory. The starting credentials are the same, but sign in separately to each portal. Your Google sign-in opens Cloud Shell; the fictional portal account opens the application.
 
@@ -37,7 +37,7 @@ Startup preserves both source trees and their separate databases. Ports 8080 and
 
 ## Read, fix, prove, report
 
-Read and reproduce on **site, port 8080**. Edit the corresponding file in **fixed/**. Save, reload **fixed, port 8081**, and run both the hostile and legitimate-use checks. Put actual observations in `reports/`; download the report, evidence, and complete changed source files for Canvas.
+Read and reproduce on **site, port 8080**. Edit the corresponding file in **fixed/**. Save, reload **fixed, port 8081**, and run both the hostile and legitimate-use checks. Save command evidence in `reports/`, then paste the relevant output and screenshots into your Word report. Download the required complete changed source files and supplied `assignment.md`; upload them with your report to Canvas.
 
 Paths such as `customer.php` in a lecture describe a file within a portal. Open `site/customer.php` to inspect the original and `fixed/customer.php` to repair it. Terminal commands run from the workspace root must include the folder, for example:
 

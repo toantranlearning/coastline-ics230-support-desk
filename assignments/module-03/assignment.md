@@ -19,7 +19,7 @@ Download the accessible Word report template from this module’s assignment in 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m03-tc-ir-002.docx`.
 2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
 3. Record actual before-and-after results as you work. Paste command output as selectable text. In the screenshot spaces, choose **Insert → Pictures**, use **In Line with Text**, and add descriptive **Alt Text**. Add a short written description of the result as well.
-4. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
+4. Complete **Revision History** at the bottom with your actual date, name, and a short change summary; each entry includes an **EXAMPLE**. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
 
 ## Step 1: Launch the workspace
 

@@ -21,7 +21,7 @@ These advisories identify the recommended preparation for this course. Students 
 > - **Security verification and maintenance:** interpreting supplied scan findings, testing controls, handling errors, recording security events, reviewing dependencies, and refactoring code.
 > - **PHP Companion:** reading and modifying the PHP used in the lab. Module 01 introduces the language; lesson-specific PHP companion pages explain relevant syntax and functions. PHP and environment setup support the security work.
 >
-> These examples describe the course's coverage without listing every topic. Students apply the concepts through authorized lab work, incident reports, case discussions, and the secure design project. Lab repairs remain in their source files, such as `.php`; incident reports are written in Markdown (`.md`) with explanations and evidence.
+> These examples describe the course's coverage without listing every topic. Students apply the concepts through authorized lab work, incident reports, case discussions, and the secure design project. Lab repairs remain in their source files, such as `.php`; standard incident reports use supplied Word (`.docx`) documents with student explanations, evidence, and Revision History.
 
 
 ---
@@ -70,7 +70,7 @@ Instruction is delivered asynchronously and organized around three no-cost sourc
 
 Each module's pages appear in a fixed order: a preface (what the module is for, its objectives, and how it is shaped), the lecture, a case-study forum on odd-numbered Modules 03 to 15, the quiz, and the assignment or lab. Module 01 opens with the introductions forum and closes with the setup lab. Module 02 has one graded design-and-repair assignment. Module 07 has a scan-reading assignment. Module 08 adds the midterm companion, the design project kickoff, the Design Project Expectations page, and the midterm practical page. Module 12 carries the design project draft and Module 16 the design project final.
 
-Students repair the portal itself. In Module 01 each student launches their own copy of the portal in Google Cloud Shell and works in that copy for the rest of the term, changing its code in the editor. There is nothing to install and no local server. In eleven modules a TechCorp security incident arrives against one of the portal's features. The student writes the incident report on the TC-IR-01 form, then reproduces the incident in their own copy, repairs the code, and proves the fix with two tests: the hostile request fails after the change, and legitimate use still works. The report and the fix are submitted together.
+Students repair the portal itself. In Module 01 each student launches their own copy of the portal in Google Cloud Shell and works in that copy for the rest of the term, changing its code in the editor. There is nothing to install and no local server. In eleven modules a TechCorp security incident arrives against one of the portal's features. Students follow Read → Fix → Prove → Report: they read the supplied report and assignment, reproduce the incident in their own copy, repair the code, and prove the fix with two tests: the hostile request fails after the change, and legitimate use still works. The report and the fix are submitted together.
 
 As a Distance Education course, each module includes asynchronous instruction and an instructor-assessed deliverable, and the instructor participates in the graded discussion forums, satisfying the requirement for regular and substantive interaction.
 
@@ -78,7 +78,15 @@ Course materials are written at transfer level. Students read specifications, pu
 
 ### Original and working portal copies
 
-The Cloud Shell workspace contains `site/` (original, port 8080), `fixed/` (working repairs, port 8081), and `reports/` (evidence and writing). Students reproduce the starting behavior in `site/`, change code in `fixed/`, and prove both hostile rejection and legitimate success in the working copy. Each portal has its own database. Repairs accumulate in `fixed/` throughout the term. Submit the complete changed source files with the required report and evidence; code snippets in a report do not replace the source files. The setup lab downloads its practice edits before restoring the two labels; the design lab keeps its router mitigation.
+The Cloud Shell workspace contains `site/` (original, port 8080), `fixed/` (working repairs, port 8081), and `reports/` (saved command output and working evidence). Students reproduce the starting behavior in `site/`, change code in `fixed/`, and prove both hostile rejection and legitimate success in the working copy. Each portal has its own database. Repairs accumulate in `fixed/` throughout the term. Submit the complete changed source files with the required report and evidence; code snippets in a report do not replace the source files. The setup lab downloads its practice edits before restoring the two labels; the design lab keeps its router mitigation.
+
+### Report format and student contribution
+
+Standard lab and incident reports use the accessible Word template downloaded from the Canvas assignment. The supplied report models professional corporate reporting with a TechCorp letterhead, executive narrative, case facts, organizational decisions, business impact, risk assessment, and response record. Students complete the marked [STUDENT] entries using their actual lab work. Every requested entry includes an **EXAMPLE** showing the expected form and detail; an example is not evidence that the student ran a test.
+
+Keep supplied facts, prompts, and EXAMPLE text. Add answers after **Answer:**, paste screenshots with captions and alt text, and complete **Revision History** at the bottom. Modules 1–2 provide exact steps and require brief additions; Module 3 introduces modest choices and more explanation. Report responsibilities increase with the assignments. The supplied organizational narrative does not create extra student tasks or require students to contact company staff or outside parties.
+
+Edit `.docx` reports in Word or Word Online. Cloud Shell Editor is for code and evidence files; Word templates are distributed through Canvas rather than the student code repository. For a code-repair assignment, upload the completed Word report, supplied `assignment.md`, and every required complete changed source file together. Screenshots embedded in Word are part of that report; upload separate images only when the assignment requires them or when referenced images are not embedded. A special assessment or project may specify another format and assistance conditions; follow that assessment's instructions.
 
 ## Required materials
 
@@ -94,6 +102,8 @@ The total required materials cost for this course is **$0.00**. No textbook purc
 
 **Optional:** Janca, T. *Alice and Bob Learn Secure Coding.* Wiley, 2025. Not required and not assessed.
 
+**Report editor:** Word or Word Online with the ability to save a `.docx`, insert screenshots, and preserve headings and tables. Use the downloadable Canvas template.
+
 **Technology requirements:** the lab runs in the student's own Google Cloud Shell environment, so a browser, a keyboard, and a Google account are enough. A Chromebook, a school computer, or a home laptop all complete the work equally. There is no software to install and no administrator rights required. No scanner or attack tool runs in the course environment; in Module 07 students analyze supplied testing evidence. Canvas supports the current and prior major versions of Chrome, Firefox, Edge, and Safari.
 
 ## Methods of evaluation
@@ -105,7 +115,7 @@ The total required materials cost for this course is **$0.00**. No textbook purc
 | Assignments (reports and repairs, labs, analyses, both midterm parts, and project submissions) | 40% | 19 |
 | Forums (introductions and seven case studies) | 20% | 8 |
 
-**Module assignments.** In eleven modules (03 to 06, 08 to 11, and 13 to 15) a TechCorp security incident arrives against one of the portal's features, and the assignment has the same two parts each time. First, the incident report: on the TechCorp TC-IR-01 form, the student documents what happened, how it happened, the response, and the confirmation that it is fixed. Second, the hands-on fix: the student reproduces the incident in their own course environment, repairs the code in the editor, and proves the fix holds, so that the hostile request fails afterward while legitimate use still works. The report and the fix are submitted together. The Module 01 setup lab report, the Module 02 design-and-repair assignment, and the Module 07 scan reading and tool comparison are graded in this category.
+**Module assignments.** In eleven modules (03 to 06, 08 to 11, and 13 to 15) a TechCorp security incident arrives against one of the portal's features, and the assignment has the same two parts each time. First, the report: students read the supplied corporate case, then add actual observations, repair reasoning, verification, and revision history to its marked entries. Second, the hands-on fix: the student reproduces the incident in their own course environment, repairs the code in the editor, and proves the fix holds, so that the hostile request fails afterward while legitimate use still works. The report and the fix are submitted together. The Module 01 setup lab report, the Module 02 design-and-repair assignment, and the Module 07 scan reading and tool comparison are graded in this category.
 
 **Design project.** A partner REST API for the portal, designed by each team of three in one shared document with three sections (authentication; authorization and data; operations) and built by each member under `api/` in their own course environment, tested with `curl` typed by hand. The required core, built by every member, is API-key authentication, the exchange of a key for a scoped, expiring token, a per-object ownership check, input validation, and errors that leak nothing. Kickoff at Module 08, one increment on each assignment page from Module 09 to Module 15, draft at Module 12, final at Module 16. At the final each member also submits a decision under challenge: the strongest objection to one safeguard they authored, defended with reasoning or conceded with a stated reason. The Design Project Expectations is a page in Module 08 and is attached to the project in Canvas.
 
