@@ -121,7 +121,7 @@ The starter introduces selected TC-IR-01 sections without requiring the full org
 1. Save and preview the report: **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), then **Markdown: Open Preview**. Check its tables and image filenames.
 2. Right-click each file in the editor's file list and choose **Download**: `reports/m03-tc-ir-002.md` and the complete changed `fixed/customer.php`. Keep your screenshots beside the report on your computer.
 3. In Canvas, choose **Start Assignment** (or **New Attempt**) and upload:
-   - supplied `lab.md`
+   - supplied `assignment.md`
    - `m03-tc-ir-002.md`
    - changed `customer.php` from `fixed/`
    - `m03-before.png` and `m03-after.png`, plus any other images you reference
@@ -129,15 +129,15 @@ The starter introduces selected TC-IR-01 sections without requiring the full org
 
 Screenshots are separate image attachments. In the Markdown report, give each image's filename and describe what it proves. Upload those image files with the other submission files.
 
-## Download and submit the lab instructions
+## Download and submit the assignment instructions
 
-Submit these three parts together: **lab.md**, your completed **m03-tc-ir-002.md**, and your changed **customer.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
+Submit these three parts together: **assignment.md**, your completed **m03-tc-ir-002.md**, and your changed **customer.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
-1. In the IDE file list, expand `assignments`, then `module-03`, and click `lab.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `lab.md` file and choose **Download**. You can also [download lab.md here](assignment-files/lab.md).
+1. In the IDE file list, expand `assignments`, then `module-03`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
+2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
 3. Download your completed report from `reports/` and the complete changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
-5. Before selecting **Submit Assignment**, confirm the upload list contains `lab.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
+5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
 

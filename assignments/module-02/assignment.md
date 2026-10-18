@@ -142,7 +142,7 @@ curl -sS -i http://127.0.0.1:8081/data/portal.sqlite
 1. Finish the supplied prompts with short answers. Keep your name, disclosure, and a two-sentence reflection. No full TC-IR-01 report is required yet.
 2. Save the report. Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **Markdown: Open Preview**, and select it. Check that the table and evidence block display correctly.
 3. Download `reports/m02-design-audit.md` and the complete changed `fixed/router.php` by right-clicking each file and choosing **Download**.
-4. In this module's Canvas assignment, choose **Start Assignment**, upload both files plus the supplied `lab.md`, and select **Submit Assignment**. Check the confirmation and filenames. Screenshots are optional if text evidence is sufficient; upload any you reference.
+4. In this module's Canvas assignment, choose **Start Assignment**, upload both files plus the supplied `assignment.md`, and select **Submit Assignment**. Check the confirmation and filenames. Screenshots are optional if text evidence is sufficient; upload any you reference.
 
 ## What to submit
 
@@ -154,15 +154,15 @@ Keep the working change in your portal. Do not submit the database, original sit
 
 Screenshots are separate image attachments. In the Markdown report, give each image's filename and describe what it proves. Upload those image files with the other submission files.
 
-## Download and submit the lab instructions
+## Download and submit the assignment instructions
 
-Submit these three parts together: **lab.md**, your completed **m02-design-audit.md**, and your changed **router.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
+Submit these three parts together: **assignment.md**, your completed **m02-design-audit.md**, and your changed **router.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
-1. In the IDE file list, expand `assignments`, then `module-02`, and click `lab.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `lab.md` file and choose **Download**. You can also [download lab.md here](assignment-files/lab.md).
+1. In the IDE file list, expand `assignments`, then `module-02`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
+2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
 3. Download your completed report from `reports/` and the complete changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
-5. Before selecting **Submit Assignment**, confirm the upload list contains `lab.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
+5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
 

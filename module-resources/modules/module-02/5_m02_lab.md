@@ -106,21 +106,21 @@ cp assignments/early-reports/m01-setup-starter.md reports/m01-setup.md
 4. Save the three captures using the supplied filenames. Record their filenames in the report and submit the screenshots as separate attachments.
 5. Save the report. Use the command palette (**Ctrl+Shift+P**, or **Cmd+Shift+P** on a Mac) to open **Markdown: Open Preview**. Check headings and code blocks. Local screenshots will not appear in Cloud Shell until uploaded there; keep them alongside your downloaded report.
 6. Right-click the report and choose **Download**. See [Writing in Markdown](../module-01/8_m01_writing-in-markdown.html) for formatting and file download help.
-7. In Canvas, choose **Start Assignment** (or **New Attempt**) and upload the six files below plus `lab.md`. Use the PHP downloads saved **before** restoring the labels. Select **Submit Assignment** and check the confirmation and filenames.
+7. In Canvas, choose **Start Assignment** (or **New Attempt**) and upload the six files below plus `assignment.md`. Use the PHP downloads saved **before** restoring the labels. Select **Submit Assignment** and check the confirmation and filenames.
 
 If blocked, record the exact action, which copy and port, and the error. Contact the instructor through Canvas Inbox or course Q&A; report only results you actually observed.
 
 Screenshots are separate image attachments. In the Markdown report, give each image's filename and describe what it proves. Upload those image files with the other submission files.
 
-## Download and submit the lab instructions
+## Download and submit the assignment instructions
 
-Submit these three parts together: **lab.md**, your completed **m01-setup.md**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
+Submit these three parts together: **assignment.md**, your completed **m01-setup.md**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
-1. In the IDE file list, expand `assignments`, then `module-01`, and click `lab.md`. This is the supplied task description. Leave it unchanged.
-2. Right-click that `lab.md` file and choose **Download**. You can also [download lab.md here](assignment-files/lab.md).
+1. In the IDE file list, expand `assignments`, then `module-01`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
+2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
 3. Download your completed report from `reports/` and the complete changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
-5. Before selecting **Submit Assignment**, confirm the upload list contains `lab.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
+5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
 
@@ -147,7 +147,7 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 
 ## What to submit
 
-Upload these files plus the supplied `lab.md`:
+Upload these files plus the supplied `assignment.md`:
 
 - `m01-setup.md`
 - Changed `layout.php`, downloaded from `fixed/` before restoring the label
