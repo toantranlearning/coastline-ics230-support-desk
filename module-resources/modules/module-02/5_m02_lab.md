@@ -34,7 +34,15 @@ For missing folders, an occupied port, or an older workspace, follow the [Cloud 
 1. Choose **Web Preview → Preview on port 8080**. This is **site**, the original.
 2. Sign in with username `rmarsh` and password `password`. These fictional portal credentials are separate from your Google account.
 3. Check for **TechCorp Portal** in the top bar and **Customers** as the heading. Take **Capture 1**, saved as `m01-setup-before.png`.
-4. Return to Cloud Shell. Choose **Web Preview → Change port**, enter **8081**, and open the preview. This is **fixed**, your working copy. Sign in separately with the same fictional credentials.
+4. Return to Cloud Shell. Choose **Web Preview → Change port**, enter **8081**, and click **Change and Preview**. This is **fixed**, your working copy. Sign in separately with the same fictional credentials.
+![Cloud Shell Web Preview menu with Preview on port 8080 and Change port](m01-cloud-shell-preview-menu.jpg)
+
+*Actual Cloud Shell controls: choose Preview on port 8080 for site, or Change port for fixed.*
+
+![Change Preview Port dialog with Port Number set to 8081](m01-cloud-shell-port-8081.jpg)
+
+*Enter 8081, then select Change and Preview to open fixed.*
+
 5. Check that both copies initially show the same labels. Keep both tabs open and check their ports before reloading or testing.
 6. In the editor, open `site/layout.php` and `site/index.php` to read the original labels. Leave these files unchanged.
 
@@ -65,6 +73,10 @@ php -l fixed/index.php
 ```
 
 5. Resolve any syntax errors. Successful checks say `No syntax errors detected`; you still need the browser comparison below.
+
+![Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34](m01-cloud-shell-edit-label.jpg)
+
+*Actual Cloud Shell editor: fixed is expanded in the file list, and the breadcrumb identifies fixed/layout.php. Change only the TechCorp Portal text inside the brand span. Your workspace folder name may differ.*
 
 ## Step 4: Prove the copies are separate
 
