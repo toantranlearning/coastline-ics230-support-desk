@@ -42,6 +42,10 @@ For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-goog
 4. Click **Customers** in the navigation. The same name should show its literal `<b>` tags. This comparison shows that one page already handles the stored name safely.
 5. Open `site/index.php` in the editor. Search for `display_name` and find the expression using `htmlspecialchars`. Open `site/customer.php` and find the name inside the results link. In report section 5, explain the difference in one sentence.
 
+![Actual original customer search for Test showing Test Account as bold text without visible markup tags](m03-search-before.jpg)
+
+*Reference screenshot from the local original portal: the stored name renders as bold text. After your repair, its literal angle brackets must be visible. Collect your own before-and-after evidence.*
+
 ## Step 3: Locate the input and outputs
 
 1. Open **fixed/customer.php**. Use **Ctrl+F** (**Cmd+F** on a Mac) to find `$_GET['q']`. This is the search term arriving from the browser.

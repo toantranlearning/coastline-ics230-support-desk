@@ -107,6 +107,10 @@ php -l fixed/router.php
 
 7. Look for `No syntax errors detected in fixed/router.php`. Copy the actual output into your report. If PHP reports an error, compare your pasted block with the example above, check its braces and semicolons, save, and run the command again. A clean syntax check means the file can be read by PHP; the next step checks whether it blocks the downloads.
 
+![Place the data denial rule after the path assignment and before existing routing in fixed/router.php](m02-rule-location.svg)
+
+*Insertion guide: add the supplied rule in fixed/router.php after the path is set and before the existing routing branches. The exact code above remains selectable text.*
+
 ## Step 5: Check that the rule works
 
 1. In the terminal, paste this command and press **Enter**. Notice **8081**: this request goes to your changed copy.
