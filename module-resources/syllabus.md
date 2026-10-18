@@ -87,7 +87,7 @@ The total required materials cost to students is $0.00. There is no textbook to 
 
 The course is delivered in sixteen content modules completed in sequence, preceded by a Course Orientation module. The course is module-paced: no week numbers appear in the student-facing content, and the term calendar exists as Canvas due dates. Two modules run per week across the eight-week term, the orientation and first modules open on the first day, and each later module opens before its due date.
 
-Each module's pages appear in this order: a preface (what the module is for, its objectives, and how it is shaped), the lecture, a case-study forum on odd-numbered Modules 03 to 15, the quiz, and the assignment or lab. Module 01 opens with the introductions forum and closes with the setup lab. Module 02 has a lab and a runbook review. Module 07 has a scan-reading assignment. Module 08 adds the midterm companion, the design project kickoff, the Design Project Expectations page, and the midterm practical page. Module 12 carries the design project draft and Module 16 the design project final. An ungraded appendix on race conditions (a lecture, an optional forum, and a practice quiz) follows Module 16.
+Each module's pages appear in this order: a preface (what the module is for, its objectives, and how it is shaped), the lecture, a case-study forum on odd-numbered Modules 03 to 15, the quiz, and the assignment or lab. Module 01 opens with the introductions forum and closes with the setup lab. Module 02 has one graded design-and-repair assignment and an optional, ungraded runbook review. Module 07 has a scan-reading assignment. Module 08 adds the midterm companion, the design project kickoff, the Design Project Expectations page, and the midterm practical page. Module 12 carries the design project draft and Module 16 the design project final. An ungraded appendix on race conditions (a lecture, an optional forum, and a practice quiz) follows Module 16.
 
 ### 7.1 The assignment model
 
@@ -100,7 +100,7 @@ Each fix stays in the student's own copy, so the portal is repaired across the t
 
 ### Original and working portal copies
 
-The Cloud Shell workspace contains `site/` (original, port 8080), `fixed/` (working repairs, port 8081), and `reports/` (evidence and writing). Students reproduce the starting behavior in `site/`, change code in `fixed/`, and prove both hostile rejection and legitimate success in the working copy. Each portal has its own database. Repairs accumulate in `fixed/` throughout the term. Submit the complete changed source files with the required report and evidence; code snippets in a report do not replace the source files. The setup lab downloads its practice edits before restoring the two labels; the design lab keeps its router mitigation. The readiness review remains a written review.
+The Cloud Shell workspace contains `site/` (original, port 8080), `fixed/` (working repairs, port 8081), and `reports/` (evidence and writing). Students reproduce the starting behavior in `site/`, change code in `fixed/`, and prove both hostile rejection and legitimate success in the working copy. Each portal has its own database. Repairs accumulate in `fixed/` throughout the term. Submit the complete changed source files with the required report and evidence; code snippets in a report do not replace the source files. The setup lab downloads its practice edits before restoring the two labels; the design lab keeps its router mitigation. The readiness review is optional, ungraded practice with no submission.
 
 ### 7.2 Course outline
 
@@ -108,7 +108,7 @@ The Cloud Shell workspace contains `site/` (original, port 8080), `fixed/` (work
 |---|---|---|---|
 | Orientation | Course orientation, syllabus, Student Learning Contract | n/a | Student Learning Contract |
 | M01 | Thinking like a secure developer; launching the course environment | Top 10 overview | Introductions forum (complete or incomplete); Quiz 1; setup lab report |
-| M02 | Security by design and threat modeling; incident-response basics | A06 Insecure Design | Quiz 2; guided design lab (three claims, one flow/threat/requirement, stopgap and tests); short runbook review |
+| M02 | Security by design and threat modeling; incident-response basics | A06 Insecure Design | Quiz 2; one guided design-and-repair assignment (short worksheet and changed router.php) |
 | M03 | Input validation and output encoding | A05 Injection | Forum; Quiz 3; incident report and fix TC-IR-002 |
 | M04 | Injection attacks | A05 Injection | Quiz 4; incident report and fix TC-IR-003 |
 | M05 | Cross-site scripting (XSS) | A05 Injection | Forum; Quiz 5; incident report and fix TC-IR-004 |
@@ -225,4 +225,4 @@ Coastline College provides tutoring, library research assistance, counseling, an
 
 *ICS C230, Secure Coding and Design. Coastline College, Information Computer Sciences.*
 
-Early reports use supplied worksheets: M01 records setup and a comparison; M02 adds brief design reasoning and three runbook checks. Full incident-report detail is introduced progressively in later vulnerability assignments.
+Early reports use supplied worksheets: M01 records setup and a comparison; M02 adds brief design reasoning; its three runbook checks are optional, ungraded practice. Full incident-report detail is introduced progressively in later vulnerability assignments.

@@ -1,10 +1,10 @@
-# M02 - Assignment: A First Runbook Readiness Review
+# M02 - Optional Practice: A First Runbook Readiness Review
 
 ## What you will do
 
-Read the completed TC-IR-001 example and review three selected instructions in TechCorp's draft runbook. Submit a short prompted worksheet, about one page plus evidence. Plan about 30 minutes after the design lab.
+Read the completed TC-IR-001 example and review three selected instructions in TechCorp's draft runbook. Use a short prompted worksheet for your own practice. This activity is ungraded and has no Canvas submission. Plan about 30 minutes after the design lab.
 
-This is the syllabus's early written-review activity. The preceding lab supplies this module's code change and its proof. Here you practice separating what a document says from what you can verify. You do not need a full incident report, eight findings, a severity drill, a complete form audit, or a preservation archive.
+This optional activity introduces incident-response readiness. The preceding lab supplies this module's code change and its proof. Here you practice separating what a document says from what you can verify. You do not need a full incident report, eight findings, a severity drill, a complete form audit, or a preservation archive.
 
 ## Step 1: Open both portals
 
@@ -53,21 +53,17 @@ Keep each cell to one short sentence. You are evaluating instructions; do not pe
 2. Choose **adopt as written**, **adopt with changes**, or **do not adopt**. In two or three sentences, give your decision and the single most important change supported by your three checks.
 3. Add a two-sentence reflection. Distinguish an observation from a proposed improvement; report only checks you performed.
 
-## Step 5: Submit
+## Finish your practice
 
-1. Check that all worksheet prompts are answered. Short sentences and the supplied table are enough; no separate essay or TC-IR-01 form is required.
-2. Save with **Ctrl+S** (**Cmd+S** on a Mac). Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **Markdown: Open Preview**, and select it to check formatting.
-3. Right-click `reports/m02-readiness-review.md`, choose **Download**, and upload it to this assignment in Canvas. Select **Submit Assignment** and check the confirmation.
+Check your three rows against the code and runbook. Keep the worksheet in `reports/` if it helps you study. You do not upload this worksheet or receive points for it. If a step is unclear, bring your question to course Q&A.
 
-## What to submit
+## Module 2 submission
 
-Submit **one file**, `m02-readiness-review.md`: the two-sentence reading response, three review rows, one provision to keep, a short adoption recommendation, disclosure, and reflection.
-
-Your changed `router.php` is submitted with the separate design lab. This review introduces no further code change. Keep the lab stopgap in `fixed/`.
+The [Block Direct Access assignment](4_m03_lab.html) is this module's single graded hands-on activity. Submit its short worksheet, the changed `router.php`, and any referenced evidence there. The quiz remains a separate assessment. This optional review adds no code change or submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
 
-**AI use on this assignment.** The syllabus policy governs; these are its terms for a written review.
+**AI use on this practice.** The syllabus policy governs; these are its terms for a written review.
 
 > [!CORRECT] Permitted, with disclosure
 > - Asking an AI to explain a concept, an OWASP guideline, or a PHP error message in general terms.

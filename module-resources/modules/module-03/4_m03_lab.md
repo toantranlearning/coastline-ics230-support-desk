@@ -1,4 +1,8 @@
-# M02 - Lab: Block Direct Access to Sensitive Data Files
+# M02 - Assignment: Block Direct Access to Sensitive Data Files
+
+## One assignment: Read → Fix → Prove → Report
+
+Submit one short worksheet and your changed `fixed/router.php` for this activity. The runbook review is optional practice, not a second assignment. The module quiz remains separate.
 
 ## What you will do
 
@@ -138,7 +142,7 @@ curl -sS -i http://127.0.0.1:8081/data/portal.sqlite
 1. Finish the supplied prompts with short answers. Keep your name, disclosure, and a two-sentence reflection. No full TC-IR-01 report is required yet.
 2. Save the report. Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **Markdown: Open Preview**, and select it. Check that the table and evidence block display correctly.
 3. Download `reports/m02-design-audit.md` and the complete changed `fixed/router.php` by right-clicking each file and choosing **Download**.
-4. In this lab's Canvas assignment, choose **Start Assignment**, upload both files, and select **Submit Assignment**. Check the confirmation and filenames. Screenshots are optional if text evidence is sufficient; upload any you reference.
+4. In this module's Canvas assignment, choose **Start Assignment**, upload both files, and select **Submit Assignment**. Check the confirmation and filenames. Screenshots are optional if text evidence is sufficient; upload any you reference.
 
 ## What to submit
 
@@ -146,7 +150,7 @@ curl -sS -i http://127.0.0.1:8081/data/portal.sqlite
 - `router.php`: your complete changed file from `fixed/`.
 - Any optional image evidence referenced in your report.
 
-Keep the working change in your portal. Do not submit the database, original site, or a full application archive. The separate [readiness review](5_m03_assignment.html) follows this lab.
+Keep the working change in your portal. Do not submit the database, original site, or a full application archive. The [optional runbook review](5_m03_runbook-practice.html) is ungraded practice; it requires no additional submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
 
