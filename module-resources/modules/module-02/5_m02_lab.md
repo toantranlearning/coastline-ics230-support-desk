@@ -76,7 +76,7 @@ php -l fixed/index.php
 
 ![Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34](m01-cloud-shell-edit-label.jpg)
 
-*Actual Cloud Shell editor: fixed is expanded in the file list, and the breadcrumb identifies fixed/layout.php. Change only the TechCorp Portal text inside the brand span. Your workspace folder name may differ.*
+*Actual Cloud Shell editor: fixed is expanded in the file list, with layout.php selected and its brand span visible. Change only the TechCorp Portal text inside the brand span. Your workspace folder name may differ.*
 
 ## Step 4: Prove the copies are separate
 

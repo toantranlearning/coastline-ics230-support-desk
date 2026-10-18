@@ -107,9 +107,9 @@ php -l fixed/router.php
 
 7. Look for `No syntax errors detected in fixed/router.php`. Copy the actual output into your report. If PHP reports an error, compare your pasted block with the example above, check its braces and semicolons, save, and run the command again. A clean syntax check means the file can be read by PHP; the next step checks whether it blocks the downloads.
 
-![Place the data denial rule after the path assignment and before existing routing in fixed/router.php](m02-rule-location.svg)
+![Cloud Shell IDE showing fixed/router.php with the path assignment and blank insertion line before site-root routing](m02-ide-rule-location.jpg)
 
-*Insertion guide: add the supplied rule in fixed/router.php after the path is set and before the existing routing branches. The exact code above remains selectable text.*
+*Actual Cloud Shell IDE: fixed is expanded on the left and router.php is selected. Insert the supplied rule on the blank line after $path is set, before the site-root branch. The exact code above remains selectable text.*
 
 ## Step 5: Check that the rule works
 
