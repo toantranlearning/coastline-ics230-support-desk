@@ -1,5 +1,5 @@
-# Module resources
+# Course resources
 
-Open `index.html`, from the editor or use the preview index in this folder. Orientation references, lectures, PHP companions, and assignment instructions are included. Canvas remains authoritative for scope, dates, assessment settings, quizzes, and submissions. Quiz content and answer keys and the instructor midterm bank are excluded. Incident starters are also available in `../assignments/incident-reports/`.
+Open `index.html` or the preview index for orientation references, lectures, PHP companions, and assignment instructions. Canvas remains authoritative for scope, dates, assessment settings, quizzes, and submissions. Quiz content and answer keys are excluded.
 
-Early report starters are in `../assignments/early-reports/`, with downloadable copies beside the course instructions. M01–M02 use short prompted worksheets. Submit changed source files from `fixed/` alongside the lab reports.
+Download report templates from the Canvas assignment. Modules 1–3 use short prompted Word reports; edit them in Word or Word Online and paste screenshots into the report. Submit the completed report with the required changed source files and `assignment.md`. Report templates are not included in this code repository.

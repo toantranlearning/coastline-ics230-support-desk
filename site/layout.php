@@ -31,6 +31,7 @@ function page_header(string $title): void
 </head>
 <body>
 <header class="topbar">
+  <img class="techcorp-logo" src="assets/techcorp-logo.png" alt="TechCorp" width="75" height="25">
   <span class="brand">TechCorp Portal</span>
   <nav>
     <a href="index.php">Customers</a>

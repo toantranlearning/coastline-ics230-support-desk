@@ -12,6 +12,15 @@ A representative reported the bold customer name and an error when searching for
 
 **Repair scope:** fix HTML rendering and search-input validation in `fixed/customer.php`. The SQL query's handling of apostrophes is a separate flaw for the next module. Leave the query unchanged and record that limitation. Keep Module 2's `fixed/router.php` stopgap.
 
+## Your report template
+
+Download the accessible Word report template from this module’s assignment in Canvas.
+
+1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m03-tc-ir-002.docx`.
+2. Keep its title, section headings, supplied case facts, and [STUDENT] prompts. Type your answer directly below each prompt after **Answer:**.
+3. Record actual before-and-after results as you work. Paste command output as selectable text. In the screenshot spaces, choose **Insert → Pictures**, use **In Line with Text**, and add descriptive **Alt Text**. Add a short written description of the result as well.
+4. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
+
 ## Step 1: Launch the workspace
 
 1. [Open Google Cloud Shell](https://shell.cloud.google.com/) with the same account as before. Open your existing course folder containing `site`, `fixed`, `reports`, and `scripts`.
@@ -26,11 +35,9 @@ bash scripts/start.sh
 5. Sign in separately to each with username `rmarsh` and password `password`. Check the port before testing. Read original files in `site/`; edit only `fixed/`.
 6. Copy the supplied report from the workspace root:
 
-```bash
-cp assignments/incident-reports/m03-tc-ir-002-starter.md reports/m03-tc-ir-002.md
-```
+Open the Word report template linked above and save your working copy before continuing.
 
-7. Open `reports/m03-tc-ir-002.md` in the editor. Fill in your name, date/time zone, and disclosure. A [downloadable starter](m03-tc-ir-002-starter.md) is also available here.
+7. Open your Word report and complete the name, date/time zone, and disclosure prompts.
 
 For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html). Test only your own portals under the [Rules Of Engagement](../module-01/18_m01_rules-of-engagement.html).
 
@@ -42,7 +49,7 @@ For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-goog
 4. Click **Customers** in the navigation. The same name should show its literal `<b>` tags. This comparison shows that one page already handles the stored name safely.
 5. Open `site/index.php` in the editor. Search for `display_name` and find the expression using `htmlspecialchars`. Open `site/customer.php` and find the name inside the results link. In report section 5, explain the difference in one sentence.
 
-**Instructional image:** Actual original customer search for Test showing Test Account as bold text without visible markup tags.
+![Actual original customer search for Test showing Test Account as bold text without visible markup tags](m03-search-before.jpg)
 
 *Reference screenshot from the local original portal: the stored name renders as bold text. After your repair, its literal angle brackets must be visible. Collect your own before-and-after evidence.*
 
@@ -108,7 +115,7 @@ If a result differs, record it before correcting the code. Check the port, saved
 
 ## Step 7: Complete the short incident report
 
-The starter introduces selected TC-IR-01 sections without requiring the full organizational form. Use short answers and the supplied tables:
+The Word template introduces selected TC-IR-01 sections without requiring the full organizational form. Use short answers and the supplied tables:
 
 1. **Section 2:** two or three sentences naming the symptom, your repair, and its observed status. Distinguish the supplied ticket from your own tests.
 2. **Section 5:** finish the source/output table and one sentence describing the trust boundary. Identify the separate SQL sink as still open.
@@ -118,24 +125,27 @@ The starter introduces selected TC-IR-01 sections without requiring the full org
 
 ## What to submit
 
-1. Save and preview the report: **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), then **Markdown: Open Preview**. Check its tables and image filenames.
-2. Right-click each file in the editor's file list and choose **Download**: `reports/m03-tc-ir-002.md` and the complete changed `fixed/customer.php`. Keep your screenshots beside the report on your computer.
+Submit your completed Word report. All changed-code requirements still apply; paste required screenshots into the report.
+
+
+1. Save the Word report, check each prompt and evidence space, and run **Review → Check Accessibility**.
+2. Save the completed Word report on your computer. In Cloud Shell, right-click `fixed/customer.php` and choose **Download**. Paste the before-and-after screenshots into the Word report.
 3. In Canvas, choose **Start Assignment** (or **New Attempt**) and upload:
    - supplied `assignment.md`
-   - `m03-tc-ir-002.md`
+   - `m03-tc-ir-002.docx`
    - changed `customer.php` from `fixed/`
-   - `m03-before.png` and `m03-after.png`, plus any other images you reference
+   - any image files you reference but did not include in the Word report
 4. Select **Submit Assignment** and check the confirmation and filenames. Retain the repairs in `fixed/`; do not upload the database or the original source tree.
 
-Screenshots are separate image attachments. In the Markdown report, give each image's filename and describe what it proves. Upload those image files with the other submission files.
+Place screenshots in the Word report beside their prompts, with a caption and alt text. Keep written test results in the report too.
 
 ## Download and submit the assignment instructions
 
-Submit these three parts together: **assignment.md**, your completed **m03-tc-ir-002.md**, and your changed **customer.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
+Submit these three parts together: **assignment.md**, your completed **m03-tc-ir-002.docx**, and your changed **customer.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
 1. In the IDE file list, expand `assignments`, then `module-03`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
 2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
-3. Download your completed report from `reports/` and the complete changed source file(s) from `fixed/`, as directed above.
+3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
@@ -157,3 +167,7 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 ## Grading rubric
 
 Use the shared [Assignment rubric](../module-01/22_m01_assignment-rubric.html). The activity-specific evidence and source-file requirements are listed above.
+
+## Explain the impact
+
+Complete **Impact analysis** in the Word report. Read its scenario, explain who or what could be harmed, then rate **Impact** and **Likelihood** as Low, Medium, or High. Write one short reason for each rating and explain how the repair helps. For Module 1, use the hypothetical scenario in the template and name a protection you would want; you are not expected to discover or repair a vulnerability in the setup lab. Keep your answers brief.

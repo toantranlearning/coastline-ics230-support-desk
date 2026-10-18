@@ -17,3 +17,5 @@ button { padding:.45rem 1rem; border:0; border-radius:3px; background:var(--acce
 .error { background:#fdecea; border-left:4px solid #a4262c; padding:.6rem .8rem; }
 .profile dt { font-weight:700; margin-top:.6rem; }
 footer { border-top:1px solid var(--line); padding:1rem 1.25rem; color:#5b6b7c; }
+
+.techcorp-logo{width:75px;height:auto;max-width:15vw;vertical-align:middle;background:#fff;padding:2px 4px;border-radius:2px;box-sizing:content-box}

@@ -1,13 +1,7 @@
-# Reports
+# Evidence and working notes
 
-Your own write-ups and working notes go in this folder: incident reports,
-review notes, test output you want to keep.
+Use this folder for saved command output and other lab evidence outside the served portals.
 
-Nothing here is committed except this file, so saving, resetting, and
-`scripts/diff.sh` all leave your write-ups alone. `scripts/nukeitall.sh` sets
-the folder aside and puts it back into the fresh copy.
+Download report templates from the Canvas assignment. For Modules 1–3, edit the Word report in Word or Word Online on your computer, paste screenshots into it, and submit the completed `.docx` to Canvas with the required code and `assignment.md`. Do not edit Word documents in Cloud Shell Editor. Follow the specified report format for later assignments.
 
-Write in Markdown and name each file for what it covers, for example
-`tc-ir-003.md`.
-
-Start an assigned incident report by copying its file from [assignments/incident-reports](../assignments/incident-reports/README.md) into this folder. Edit your copy, not the tracked starter. Use the Canvas assignment for scope and submit the finished report and required attachments there. Keep another copy of your completed work; reset or fresh-clone behavior is not an archival guarantee.
+Keep a separate copy of your completed work. Reset or fresh-clone behavior is not an archival guarantee.

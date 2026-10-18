@@ -20,7 +20,7 @@ Both portals initially contain the same PHP, CSS, API, library, and seed files. 
 1. **Read:** open `site/` files and reproduce the assigned behavior on port 8080.
 2. **Fix:** open the matching file under `fixed/` and make the assigned change. Save it.
 3. **Prove:** run the hostile request against both ports; on 8081 also verify legitimate use. A syntax check such as `php -l fixed/router.php` checks parsing, not behavior.
-4. **Report:** record actual commands and results in `reports/`. Download the report, evidence, and every changed source file from `fixed/`; submit them to Canvas as the assignment directs. Keep the repairs in `fixed/` for later modules.
+4. **Report:** download the report template from the Canvas assignment. For Modules 1–3, open the `.docx` in Word or Word Online, answer below each prompt, and paste your screenshots into the report. Cloud Shell Editor does not edit Word documents. Download every required changed source file from `fixed/` and the supplied `assignment.md`; upload those with your completed report to Canvas. Keep the repairs in `fixed/` for later modules. Report templates are distributed through Canvas, not this code repository.
 
 ## First setup exercise
 

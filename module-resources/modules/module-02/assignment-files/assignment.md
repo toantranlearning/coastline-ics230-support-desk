@@ -4,6 +4,15 @@
 
 Set up two copies of the TechCorp portal: **site** is the original you read and compare, and **fixed** is the working copy you change throughout the term. Practice the read, change, prove, report routine with two harmless labels. Plan about an hour.
 
+## Your report template
+
+Download the accessible Word report template from this module’s Canvas assignment.
+
+1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m01-setup.docx`.
+2. Keep its title, section headings, supplied case facts, and [STUDENT] prompts. Type your answer directly below each prompt after **Answer:**.
+3. Record actual before-and-after results as you work. Paste command output as selectable text. In the screenshot spaces, choose **Insert → Pictures**, use **In Line with Text**, and add descriptive **Alt Text**. Add a short written description of the result as well.
+4. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
+
 ## Step 1: Launch Google Cloud Shell
 
 1. Sign in to your Google account in this browser.
@@ -25,7 +34,7 @@ fixed portal is running on port 8081.
 
 For missing folders, an occupied port, or an older workspace, follow the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html). Your own two portal copies are the only authorized targets.
 
-**Instructional image:** Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports.
+![Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports](m01-workspace-map.svg)
 
 *Workspace map: a simplified instructional diagram, not a Cloud Shell screenshot. Commands and labels remain written in the steps above.*
 
@@ -35,18 +44,18 @@ For missing folders, an occupied port, or an older workspace, follow the [Cloud 
 2. Sign in with username `rmarsh` and password `password`. These fictional portal credentials are separate from your Google account.
 3. Check for **TechCorp Portal** in the top bar and **Customers** as the heading. Take **Capture 1**, saved as `m01-setup-before.png`.
 4. Return to Cloud Shell. Choose **Web Preview → Change port**, enter **8081**, and click **Change and Preview**. This is **fixed**, your working copy. Sign in separately with the same fictional credentials.
-**Instructional image:** Cloud Shell Web Preview menu showing the selected port and Change port.
+![Cloud Shell Web Preview menu showing the selected port and Change port](m01-cloud-shell-preview-menu.jpg)
 
 *Actual Cloud Shell controls: the Preview label remembers the last selected port (8081 here). Use Change port to select 8080 for site or 8081 for fixed.*
 
-**Instructional image:** Change Preview Port dialog with Port Number set to 8081.
+![Change Preview Port dialog with Port Number set to 8081](m01-cloud-shell-port-8081.jpg)
 
 *Enter 8081, then select Change and Preview to open fixed.*
 
 5. Check that both copies initially show the same labels. Keep both tabs open and check their ports before reloading or testing.
 6. In the editor, open `site/layout.php` and `site/index.php` to read the original labels. Leave these files unchanged.
 
-**Instructional image:** Actual original portal customer list showing TechCorp Portal and Customers.
+![Actual original portal customer list showing TechCorp Portal and Customers](m01-portal-original.jpg)
 
 *Reference screenshot from the local course portal: look for TechCorp Portal in the top bar and Customers above the table. Use your own captures in your submission.*
 
@@ -74,7 +83,7 @@ php -l fixed/index.php
 
 5. Resolve any syntax errors. Successful checks say `No syntax errors detected`; you still need the browser comparison below.
 
-**Instructional image:** Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34.
+![Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34](m01-cloud-shell-edit-label.jpg)
 
 *Actual Cloud Shell editor: fixed is expanded in the file list, with layout.php selected and its brand span visible. Change only the TechCorp Portal text inside the brand span. Your workspace folder name may differ.*
 
@@ -95,30 +104,23 @@ This setup exercise restores its cosmetic edits after you download the changed s
 
 ## Step 6: Report and submit
 
-1. Copy the short supplied worksheet into `reports/`:
-
-```bash
-cp assignments/early-reports/m01-setup-starter.md reports/m01-setup.md
-```
-
-2. Open `reports/m01-setup.md` and keep each [STUDENT] prompt and write your answer directly below it. A [downloadable report starter](report-starters/m01-setup-starter.md) is also available here.
-3. Use brief answers: the two startup messages, both syntax results, two sentences comparing the copies, and a two-sentence reflection. Keep the supplied screenshot filenames and fill in your disclosure. No full incident form or essay is required.
-4. Save the three captures using the supplied filenames. Record their filenames in the report and submit the screenshots as separate attachments.
-5. Save the report. Use the command palette (**Ctrl+Shift+P**, or **Cmd+Shift+P** on a Mac) to open **Markdown: Open Preview**. Check headings and code blocks. Local screenshots will not appear in Cloud Shell until uploaded there; keep them alongside your downloaded report.
-6. Right-click the report and choose **Download**. See [Writing in Markdown](../module-01/8_m01_writing-in-markdown.html) for formatting and file download help.
-7. In Canvas, choose **Start Assignment** (or **New Attempt**) and upload the six files below plus `assignment.md`. Use the PHP downloads saved **before** restoring the labels. Select **Submit Assignment** and check the confirmation and filenames.
+1. Open your saved Word report and complete each [STUDENT] prompt. Record actual startup messages, syntax results, your comparison of the two copies, and a brief reflection.
+2. Insert the original, changed, and restored screenshots beside their prompts. Add a caption and descriptive alt text to each. Use selectable text for commands and output.
+3. Save the report and run Word’s **Review → Check Accessibility**.
+4. In Canvas, choose **Start Assignment** (or **New Attempt**). Upload your completed `m01-setup.docx`, supplied `assignment.md`, and the changed `layout.php` and `index.php` saved before restoring the labels. Screenshots included in the report do not need separate uploads.
+5. Select **Submit Assignment** and check the confirmation and filenames.
 
 If blocked, record the exact action, which copy and port, and the error. Contact the instructor through Canvas Inbox or course Q&A; report only results you actually observed.
 
-Screenshots are separate image attachments. In the Markdown report, give each image's filename and describe what it proves. Upload those image files with the other submission files.
+Place screenshots in the Word report beside their prompts, with a caption and alt text. Keep written test results in the report too.
 
 ## Download and submit the assignment instructions
 
-Submit these three parts together: **assignment.md**, your completed **m01-setup.md**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
+Submit these three parts together: **assignment.md**, your completed **m01-setup.docx**, and your changed **layout.php and index.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
 1. In the IDE file list, expand `assignments`, then `module-01`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
 2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
-3. Download your completed report from `reports/` and the complete changed source file(s) from `fixed/`, as directed above.
+3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
@@ -147,20 +149,12 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 
 ## What to submit
 
-Upload these files plus the supplied `assignment.md`:
+- Completed `m01-setup.docx`, including all answers and three screenshots
+- Supplied `assignment.md`
+- Changed `layout.php` and `index.php` downloaded from fixed before restoration
 
-- `m01-setup.md`
-- Changed `layout.php`, downloaded from `fixed/` before restoring the label
-- Changed `index.php`, downloaded from `fixed/` before restoring the heading
-- `m01-setup-before.png`
-- `m01-setup-changed.png`
-- `m01-setup-restored.png`
+Complete the name, AI disclosure, and reflection prompts in the Word report. Keep earlier repairs in fixed.
 
-At the top of the report, complete:
+## Explain the impact
 
-```text
-NAME: First Last
-AI DISCLOSURE: What you asked an AI and what you used, or "None."
-REFLECTION: Two or three sentences: what you set up, what was
-difficult, and what you learned.
-```
+Complete **Impact analysis** in the Word report. Read its scenario, explain who or what could be harmed, then rate **Impact** and **Likelihood** as Low, Medium, or High. Write one short reason for each rating and explain how the repair helps. For Module 1, use the hypothetical scenario in the template and name a protection you would want; you are not expected to discover or repair a vulnerability in the setup lab. Keep your answers brief.

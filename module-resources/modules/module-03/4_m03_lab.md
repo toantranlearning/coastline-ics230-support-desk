@@ -14,6 +14,15 @@ Ticket PORTAL-118 asks you to investigate this direct-access flaw. Reproduce it 
 
 This early report is a short worksheet: three claim rows, one flow, one threat, and a before/after table. Brief answers are enough. The full threat-modeling method remains in the lecture for practice; an exhaustive audit, diagram, STRIDE register, and ranked backlog are not required for this submission.
 
+## Your report template
+
+Download the accessible Word report template from this module’s Canvas assignment.
+
+1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m02-design-audit.docx`.
+2. Keep its title, section headings, supplied case facts, and [STUDENT] prompts. Type your answer directly below each prompt after **Answer:**.
+3. Record actual before-and-after results as you work. Paste command output as selectable text. In the screenshot spaces, choose **Insert → Pictures**, use **In Line with Text**, and add descriptive **Alt Text**. Add a short written description of the result as well.
+4. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
+
 ## Step 1: Open both portals
 
 1. [Launch Google Cloud Shell](https://shell.cloud.google.com/) with the Google account used for setup. Open your existing course folder containing `site`, `fixed`, `reports`, and `scripts`.
@@ -29,16 +38,9 @@ bash scripts/start.sh
 
 Use the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html) for first setup or startup problems. Test only your own copies under the course [Rules Of Engagement](../module-01/18_m01_rules-of-engagement.html).
 
-## Step 2: Start the supplied report
+## Step 2: Open your report
 
-1. In the editor, open `assignments/early-reports/m02-design-audit-starter.md`.
-2. Copy it into the workspace-level `reports/` folder and name the copy `m02-design-audit.md`. From the workspace-root terminal you can use:
-
-```bash
-cp assignments/early-reports/m02-design-audit-starter.md reports/m02-design-audit.md
-```
-
-3. Fill in your name and disclosure. Complete its prompts as you work. You can also [download the report starter](report-starters/m02-design-audit-starter.md) from this page.
+Download the Word template linked above, save your copy, and fill in your name and AI disclosure. Complete its prompts as you follow the steps below. Write answers after **Answer:** and paste evidence into the matching section.
 
 ## Step 3: Download the files without signing in
 
@@ -140,27 +142,30 @@ curl -sS -i http://127.0.0.1:8081/data/portal.sqlite
 ## Step 6: Report and submit
 
 1. Finish the supplied prompts with short answers. Keep your name, disclosure, and a two-sentence reflection. No full TC-IR-01 report is required yet.
-2. Save the report. Press **Ctrl+Shift+P** (**Cmd+Shift+P** on a Mac), type **Markdown: Open Preview**, and select it. Check that the table and evidence block display correctly.
-3. Download `reports/m02-design-audit.md` and the complete changed `fixed/router.php` by right-clicking each file and choosing **Download**.
+2. Save the Word report and check that every prompt has an answer and the evidence is readable.
+3. Save your completed `m02-design-audit.docx` on your computer. In Cloud Shell, right-click `fixed/router.php` and choose **Download**.
 4. In this module's Canvas assignment, choose **Start Assignment**, upload both files plus the supplied `assignment.md`, and select **Submit Assignment**. Check the confirmation and filenames. Screenshots are optional if text evidence is sufficient; upload any you reference.
 
 ## What to submit
 
-- `m02-design-audit.md`: completed short worksheet with three claims, one flow/threat/requirement, test results, brief explanation, and disclosure/reflection.
+Submit your completed Word report. All changed-code requirements still apply; paste required screenshots into the report.
+
+
+- `m02-design-audit.docx`: completed short worksheet with three claims, one flow/threat/requirement, test results, brief explanation, and disclosure/reflection.
 - `router.php`: your complete changed file from `fixed/`.
 - Any optional image evidence referenced in your report.
 
 Keep the working change in your portal. Do not submit the database, original site, or a full application archive.
 
-Screenshots are separate image attachments. In the Markdown report, give each image's filename and describe what it proves. Upload those image files with the other submission files.
+Place screenshots in the Word report beside their prompts, with a caption and alt text. Keep written test results in the report too.
 
 ## Download and submit the assignment instructions
 
-Submit these three parts together: **assignment.md**, your completed **m02-design-audit.md**, and your changed **router.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
+Submit these three parts together: **assignment.md**, your completed **m02-design-audit.docx**, and your changed **router.php**. Include any screenshots required above. Keep the [STUDENT] prompts in your report and write each answer directly below its prompt.
 
 1. In the IDE file list, expand `assignments`, then `module-02`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
 2. Right-click that `assignment.md` file and choose **Download**. You can also [download assignment.md here](assignment-files/assignment.md).
-3. Download your completed report from `reports/` and the complete changed source file(s) from `fixed/`, as directed above.
+3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
 4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
@@ -179,3 +184,7 @@ Open notes and open book are both fine. Respond in your own words; do not copy f
 
 You must be able to explain every line you submit, on request. Undisclosed AI use is handled as academic dishonesty under the syllabus.
 
+
+## Explain the impact
+
+Complete **Impact analysis** in the Word report. Read its scenario, explain who or what could be harmed, then rate **Impact** and **Likelihood** as Low, Medium, or High. Write one short reason for each rating and explain how the repair helps. For Module 1, use the hypothetical scenario in the template and name a protection you would want; you are not expected to discover or repair a vulnerability in the setup lab. Keep your answers brief.
