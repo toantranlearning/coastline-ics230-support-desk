@@ -1,70 +1,53 @@
-# TC-IR-002 — Module 03 Incident Report
+# TC-IR-002 — Guided First Repair Report
+NAME: [Your name]
+DATE AND TIME ZONE: [Actual date/time zone]
+AI DISCLOSURE: [Tool, help, output used or changed, and checks; or None.]
 
-Student: [Your name]
-
-Report date: [Actual date and time zone]
-
-Working status: [Not yet investigated / investigating / repaired and verified / open]
-
-## Supplied case background
-
-These are fictional facts and an analyst determination supplied by the assignment. They are not observations you have personally verified. Keep your own observations and conclusions separate.
-
-> **Incident TC-IR-002 - Customer search renders a name as markup**
-> A support rep reported that a customer account named `<b>Test Account</b>` shows up in the search results in **bold**, not as the literal name. A second rep reported that searching for the customer `O'Brien` returns an error page instead of results.
->
-> **Analyst determination.** These are two symptoms of one root cause: the search page takes the term the rep types and the names it finds, and writes them into the page and into a database query without treating them as data. The bold rendering is the browser reading a stored value as HTML. The error on the apostrophe is the database reading the search term as part of a query. This assignment closes the rendering half. The query half is out of scope for this module and is expected to remain open at the end of it.
-
-## How to complete this starter
-
-Copy this file into `reports/` and remove `-starter` from the filename. Replace the bracketed prompts with your work. The Canvas assignment defines the repair scope, required tests, and submission requirements. Use only your own authorized lab. Capture evidence before changing code because the repair may remove the starting behavior. Submit the completed Markdown report and required attachments to Canvas.
-
-Keep earlier incident reports as separate records. Where the assignment asks, reference prior incident IDs and add the new analysis; do not rewrite an earlier incident as though it contained evidence collected later. Later assignments require more detailed analysis and verification, rather than completion of every possible organizational field.
+Supplied case: customer search displays a stored name as bold HTML. A separate apostrophe-related SQL error is outside this repair. The following sections record my own work.
 
 ## 2. Executive summary
-
-**Assignment requirement:** Two or three sentences a manager could read: what was exposed, to whom, and whether it is fixed. No code.
-
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
-
-## 3. Systems and data affected
-
-**Assignment requirement:** The `customer.php` search feature, and which values are involved: the search term the rep types, and the customer names the search returns.
-
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
-
-## 4. Timeline
-
-**Assignment requirement:** When it was reported and when you acted, in relative terms.
-
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+[Two or three sentences: symptom, change, observed repair status.]
 
 ## 5. Detection and analysis
+Source and trust boundary: [One sentence naming the browser input and boundary.]
 
-**Assignment requirement:** Trace the search term from the request to the page. Name the **source**, the **trust boundary**, each **sink**, and the **interpreter** beyond it. There is more than one sink; name all of them.
+| Expression / my line number | Destination and interpreter | My handling |
+|---|---|---|
+| Search input value | [Context] | [Expression/control] |
+| Results heading | [Context] | [Expression/control] |
+| Stored result name | [Context] | [Expression/control] |
+| ID in result link | [Context] | [Representation and reason] |
+| SQL search query | SQL/database | [Known open limitation] |
 
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+Why the original list and search differed: [One sentence.]
 
 ## 6. Response actions
-
-**Assignment requirement:** The fix you applied: server-side validation of the term on an allow-list, and output encoding at each sink. Name the principle and the control, using the lecture's words.
-
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
+Allow-list pattern and reason: [Your pattern; one sentence.]
+Validation versus encoding: [Two or three sentences about your implementation.]
 
 ## 7. Confirmation of remediation
+| Test on fixed 8081 | Actual result | Evidence / what this checks |
+|---|---|---|
+| Test: stored markup displayed literally | [Observed] | [After screenshot; compare original] |
+| Brien: O'Brien displayed correctly | [Observed] | [Normal display] |
+| Missing and blank q | [Observed for each] | [Form still opens] |
+| 40 letters | [Observed] | [Accepted boundary] |
+| 41 letters | [Observed] | [Rejected boundary] |
+| q=%3Cb%3E | [Observed] | [Invalid characters] |
+| q[]=Test | [Observed] | [Array rejected cleanly] |
+| q=%C3%A9 | [Observed] | [Accented letter accepted] |
+| Customers and account link | [Observed] | [Navigation works] |
 
-**Assignment requirement:** Your before and after evidence from Part 2. The markup case renders as text after the fix; a legitimate punctuated name still displays.
+```text
+[Paste actual PHP syntax-check output and any relevant response excerpts.]
+```
 
-| Check performed | Before repair | After repair | What the evidence proves and its limits | Evidence file or excerpt |
-|---|---|---|---|---|
-| [Required check] | [Observed result] | [Observed result] | [Supported conclusion and remaining uncertainty] | [Reference] |
+![Original search rendering](m03-before.png)
+![Working search after repair](m03-after.png)
+
+Known remaining SQL limitation: [One sentence; do not claim it is fixed.]
 
 ## 9. Post-incident actions
-
-**Assignment requirement:** The OWASP cheat sheet you followed, by name, and one change that would stop this class of bug from recurring on other pages.
-
-[Write your response using supplied facts and your own evidence. If required information is unavailable, state what is unknown and why. Do not claim an action or outcome that you did not establish.]
-
-## Sources and assistance
-
-[Name the technical sources you relied on. Disclose AI assistance as the syllabus requires, and identify how you checked generated code or claims.]
+Sources: [Name the two OWASP cheat sheets you used.]
+Prevention: [One sentence: how to prevent similar output mistakes on another page.]
+REFLECTION: [Two sentences about your learning or difficulty.]
