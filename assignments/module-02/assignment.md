@@ -2,7 +2,7 @@
 
 ## One assignment: Read → Fix → Prove → Report
 
-Submit one short worksheet and your changed `fixed/router.php` for this activity. The module quiz remains separate.
+Submit the supplied Word report with your brief additions and your changed `fixed/router.php` for this activity. The module quiz remains separate.
 
 ## What you will do
 
@@ -12,14 +12,14 @@ Ticket PORTAL-118 asks you to investigate this direct-access flaw. Reproduce it 
 
 **Design lesson — OWASP A06 Insecure Design:** sensitive data files were placed inside the directory the web server serves. Your deny rule is a mitigation for that design decision; it blocks the assigned URLs but leaves the files in that directory. Moving sensitive storage outside the served directory would address the file-placement flaw. This lab asks you to apply and explain the mitigation.
 
-This early report is a short worksheet: three claim rows, one flow, one threat, and a before/after table. Brief answers are enough. The full threat-modeling method remains in the lecture for practice; an exhaustive audit, diagram, STRIDE register, and ranked backlog are not required for this submission.
+The supplied corporate report contains the case background, management narrative, risk assessment, and response plan. Your additions are brief: three claim rows, one flow, one threat, and a before/after table. Every entry includes an EXAMPLE showing the expected form and detail. The full threat-modeling method remains in the lecture for practice; an exhaustive audit, diagram, STRIDE register, and ranked backlog are not required for this submission.
 
 ## Your report template
 
 Download the accessible Word report template from this module’s assignment in Canvas.
 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m02-design-audit.docx`.
-2. Keep its title, section headings, supplied case facts, and [STUDENT] prompts. Type your answer directly below each prompt after **Answer:**.
+2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
 3. Record actual before-and-after results as you work. Paste command output as selectable text. In the screenshot spaces, choose **Insert → Pictures**, use **In Line with Text**, and add descriptive **Alt Text**. Add a short written description of the result as well.
 4. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
 
@@ -76,11 +76,11 @@ file reports/m02-before.sqlite
 8. The output should identify a SQLite database. Copy that output into your report. You have now downloaded both files without signing in. Keep the downloaded database in Cloud Shell; do not submit it.
 9. In your report's first two claim rows, mark each claim **supported** or **contradicted** by these results. Add the status or file-identification evidence beside your answer.
 10. Open the original portal's **8080** browser tab. Sign in as `rmarsh` if needed. Click **Customers**, then click one customer's account link. In the third claim row, record whether those pages opened.
-11. In the editor, open `site/router.php`. Press **Ctrl+F** (**Cmd+F** on a Mac), search for `file_exists`, and read the block containing `return false`. That branch lets the server send an existing file directly. In the worksheet, explain in one sentence why a sign-in check on a different PHP page did not stop the downloads.
+11. In the editor, open `site/router.php`. Press **Ctrl+F** (**Cmd+F** on a Mac), search for `file_exists`, and read the block containing `return false`. That branch lets the server send an existing file directly. In the report, explain in one sentence why a sign-in check on a different PHP page did not stop the downloads.
 
 ### Fill in the three short design prompts
 
-1. In the worksheet's **Flow** line, put `/data/seed.sql` on the request arrow and the downloaded SQL on the return arrow. Name the browser-to-server boundary: the request came from outside the server. No drawing is required.
+1. In the report's **Flow** line, put `/data/seed.sql` on the request arrow and the downloaded SQL on the return arrow. Name the browser-to-server boundary: the request came from outside the server. No drawing is required.
 2. In **Threat and STRIDE category**, write one sentence saying who could download what data. Compare that threat with the six STRIDE categories in lecture section 5, choose one, and state why it fits.
 3. In **Requirement**, finish “The portal must…” with a rule describing who must be refused access to these files and what response should show the refusal. You will test that rule next.
 
@@ -151,7 +151,7 @@ curl -sS -i http://127.0.0.1:8081/data/portal.sqlite
 Submit your completed Word report. All changed-code requirements still apply; paste required screenshots into the report.
 
 
-- `m02-design-audit.docx`: completed short worksheet with three claims, one flow/threat/requirement, test results, brief explanation, and disclosure/reflection.
+- `m02-design-audit.docx`: completed short report with three claims, one flow/threat/requirement, test results, brief explanation, and disclosure/reflection.
 - `router.php`: your complete changed file from `fixed/`.
 - Any optional image evidence referenced in your report.
 
@@ -187,4 +187,4 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 
 ## Explain the impact
 
-Complete **Impact analysis** in the Word report. Read its scenario, explain who or what could be harmed, then rate **Impact** and **Likelihood** as Low, Medium, or High. Write one short reason for each rating and explain how the repair helps. For Module 1, use the hypothetical scenario in the template and name a protection you would want; you are not expected to discover or repair a vulnerability in the setup lab. Keep your answers brief.
+Read report section **4 Business impact and risk**, including TechCorp’s initial ratings and risk matrix. Complete the [STUDENT] entry: confirm or revise **Impact** and **Likelihood** as Low, Medium, or High, give a short reason for each, and explain how the control helps. Use the clearly labeled **EXAMPLE** as a model and write your own answer below it. Module 1 assesses the reliability of the setup and comparison process; it does not ask you to discover a vulnerability or claim customer-data exposure. Keep answers brief.

@@ -9,7 +9,7 @@ Set up two copies of the TechCorp portal: **site** is the original you read and 
 Download the accessible Word report template from this module’s assignment in Canvas.
 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m01-setup.docx`.
-2. Keep its title, section headings, supplied case facts, and [STUDENT] prompts. Type your answer directly below each prompt after **Answer:**.
+2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
 3. Record actual before-and-after results as you work. Paste command output as selectable text. In the screenshot spaces, choose **Insert → Pictures**, use **In Line with Text**, and add descriptive **Alt Text**. Add a short written description of the result as well.
 4. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
 
@@ -157,4 +157,4 @@ Complete the name, AI disclosure, and reflection prompts in the Word report. Kee
 
 ## Explain the impact
 
-Complete **Impact analysis** in the Word report. Read its scenario, explain who or what could be harmed, then rate **Impact** and **Likelihood** as Low, Medium, or High. Write one short reason for each rating and explain how the repair helps. For Module 1, use the hypothetical scenario in the template and name a protection you would want; you are not expected to discover or repair a vulnerability in the setup lab. Keep your answers brief.
+Read report section **4 Business impact and risk**, including TechCorp’s initial ratings and risk matrix. Complete the [STUDENT] entry: confirm or revise **Impact** and **Likelihood** as Low, Medium, or High, give a short reason for each, and explain how the control helps. Use the clearly labeled **EXAMPLE** as a model and write your own answer below it. Module 1 assesses the reliability of the setup and comparison process; it does not ask you to discover a vulnerability or claim customer-data exposure. Keep answers brief.

@@ -17,7 +17,7 @@ A representative reported the bold customer name and an error when searching for
 Download the accessible Word report template from this module’s Canvas assignment.
 
 1. Open the template in Word or a DOCX editor. Choose **Save As** and name your copy `m03-tc-ir-002.docx`.
-2. Keep its title, section headings, supplied case facts, and [STUDENT] prompts. Type your answer directly below each prompt after **Answer:**.
+2. Read the supplied executive summary and case narrative as a model of professional reporting. Keep its title, headings, supplied facts, [STUDENT] prompts, and **EXAMPLE** entries. Examples show the expected form and detail; they are not your observations. Write your own response after **Answer:**.
 3. Record actual before-and-after results as you work. Paste command output as selectable text. In the screenshot spaces, choose **Insert → Pictures**, use **In Line with Text**, and add descriptive **Alt Text**. Add a short written description of the result as well.
 4. Before submission, use **Review → Check Accessibility**, address the findings, and save the completed Word report. Submit this one report file with `assignment.md` and your changed code. Required screenshots can go inside the Word report; separate image uploads are needed only if you reference files that are not included in it.
 
@@ -33,9 +33,7 @@ bash scripts/start.sh
 
 4. Wait for both startup messages. Open **Web Preview → Preview on port 8080** for the original site. Use **Web Preview → Change port → 8081** for fixed.
 5. Sign in separately to each with username `rmarsh` and password `password`. Check the port before testing. Read original files in `site/`; edit only `fixed/`.
-6. Copy the supplied report from the workspace root:
-
-Open the Word report template linked above and save your working copy before continuing.
+6. Download the Word report linked above from Canvas and save your working copy on your computer. Open it in Word or Word Online.
 
 7. Open your Word report and complete the name, date/time zone, and disclosure prompts.
 
@@ -45,7 +43,7 @@ For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-goog
 
 1. In the **8080** preview address bar, keep the existing host and replace the path after it with `/customer.php`. Press **Enter**. You should see **Customer lookup** and a Search box.
 2. Type `Test` in the Search box and click **Search**. Find the customer named Test Account. Its name should appear bold, without visible `<b>` tags.
-3. Take a screenshot and save it as `m03-before.png`. Add the filename in report section 7's evidence column. Record what you actually see.
+3. Take a screenshot and save it as `m03-before.png`. Add the filename in report section 8's screenshot entry. Record what you actually see.
 4. Click **Customers** in the navigation. The same name should show its literal `<b>` tags. This comparison shows that one page already handles the stored name safely.
 5. Open `site/index.php` in the editor. Search for `display_name` and find the expression using `htmlspecialchars`. Open `site/customer.php` and find the name inside the results link. In report section 5, explain the difference in one sentence.
 
@@ -170,4 +168,4 @@ Use the shared [Assignment rubric](../module-01/22_m01_assignment-rubric.html). 
 
 ## Explain the impact
 
-Complete **Impact analysis** in the Word report. Read its scenario, explain who or what could be harmed, then rate **Impact** and **Likelihood** as Low, Medium, or High. Write one short reason for each rating and explain how the repair helps. For Module 1, use the hypothetical scenario in the template and name a protection you would want; you are not expected to discover or repair a vulnerability in the setup lab. Keep your answers brief.
+Read report section **4 Business impact and risk**, including TechCorp’s initial ratings and risk matrix. Complete the [STUDENT] entry: confirm or revise **Impact** and **Likelihood** as Low, Medium, or High, give a short reason for each, and explain how the control helps. Use the clearly labeled **EXAMPLE** as a model and write your own answer below it. Module 1 assesses the reliability of the setup and comparison process; it does not ask you to discover a vulnerability or claim customer-data exposure. Keep answers brief.
