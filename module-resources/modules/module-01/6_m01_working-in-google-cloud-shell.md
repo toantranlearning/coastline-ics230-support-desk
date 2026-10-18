@@ -33,7 +33,7 @@ fixed portal is running on port 8081.
 6. Select **Web Preview → Change port**, enter **8081**, and click **Change and Preview** for your working copy. Keep both tabs and check the port in each address before testing.
 7. Sign in separately to each using the account specified by the assignment. For ordinary customer exercises use `rmarsh` / `password`.
 
-Startup preserves both source trees and their separate databases. It restarts only processes recorded for this workspace. If a port is already occupied by another process, the script reports the failure instead of killing unrelated work. Include the relevant `.lab-runtime/site.log` or `.lab-runtime/fixed.log` error when asking for help.
+Startup preserves both source trees and their separate databases. Ports 8080 and 8081 are reserved for the course portals. Startup stops any processes using these ports, including servers left by older checkouts, before launching both copies. Include the relevant `.lab-runtime/site.log` or `.lab-runtime/fixed.log` error when asking for help.
 
 ## Read, fix, prove, report
 

@@ -28,7 +28,7 @@ Open both previews and sign in to each. Change only `fixed/layout.php` (`TechCor
 
 ## Returning and recovering
 
-Run `bash scripts/start.sh` from the workspace root each session. It starts both copies and preserves their files and databases. `bash scripts/diff.sh` compares the two source trees. `bash scripts/save.sh "describe repair"` commits only working source; reports and runtime databases are excluded.
+Run `bash scripts/start.sh` from the workspace root each session. It stops processes using the course ports 8080 and 8081, starts both copies, and preserves their files and databases. `bash scripts/diff.sh` compares the two source trees. `bash scripts/save.sh "describe repair"` commits only working source; reports and runtime databases are excluded.
 
 `bash scripts/reset.sh --baseline` asks before replacing **all of fixed/** with the original source and a fresh database. It preserves `site/` and `reports/` and keeps the previous `fixed/` under `.lab-runtime/` for recovery. Download work first. Restore an individual edit manually when possible so earlier repairs remain intact. Source Control's Discard All Changes is not a course reset.
 
