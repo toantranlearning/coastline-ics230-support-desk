@@ -6,7 +6,6 @@ Module 01 gave you trust boundaries, source and sink, and the session cookie. Th
 
 The lab focuses on one design claim: whether supporting data files can be served without signing in. You read the original source, add a stopgap in `fixed/router.php`, prove both blocked requests and legitimate use, and complete a short supplied worksheet. You practice one flow, one threat, and one security requirement. The lecture teaches the broader threat-modeling method; the first report does not require an exhaustive audit.
 
-The optional, ungraded readiness review uses a short starter: three selected runbook checks, one provision to keep, and one adoption recommendation. Reports become more complete as you gain practice.
 
 ## The question this module answers
 
@@ -27,7 +26,7 @@ After Module 02 you can:
 
 ## The two-copy workspace
 
-Run `bash scripts/start.sh` from the workspace root. Read and reproduce on **site, port 8080**; edit and prove the stopgap on **fixed, port 8081**. Keep evidence in `reports/`. Submit the changed `fixed/router.php` with the lab report and required images. The optional readiness review uses the working copy for practice; nothing is submitted.
+Run `bash scripts/start.sh` from the workspace root. Read and reproduce on **site, port 8080**; edit and prove the stopgap on **fixed, port 8081**. Keep evidence in `reports/`. Submit the changed `fixed/router.php` with the lab report and required images.
 
 ## Before you start
 
@@ -56,8 +55,7 @@ Everything you test in this module is your own course environment. The assignmen
 | Lecture | 75 minutes | Notes and the examples tried in your environment |
 | Quiz | 15 minutes | 10 responses |
 | Lab: audit the design document and model the threats | 60–75 minutes | Three claim checks, one flow/threat/requirement, stopgap, before/after results, and short worksheet |
-| Optional practice: incident response readiness review | 30 minutes, optional | Personal notes; ungraded, no submission |
-| Incident Response Runbook page | 15 minutes | Read during the assignment; nothing to submit |
+| Incident Response Runbook page | 15 minutes | Read as a lecture reference only; no review activity |
 
 ## When you are done
 

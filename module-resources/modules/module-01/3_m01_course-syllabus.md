@@ -68,7 +68,7 @@ Instruction is delivered asynchronously and organized around three no-cost sourc
 | OWASP Top 10:2025 and the OWASP Cheat Sheet Series, with a CLARK module (clark.center) where one matches | The required reading in each lecture: the same material in the industry's own words |
 | The TechCorp customer portal, a deliberately insecure PHP application in the student's own Google Cloud Shell | The practice target the student repairs across the term, launched from the Launch Course Environment page in Module 01 and edited in the Cloud Shell editor |
 
-Each module's pages appear in a fixed order: a preface (what the module is for, its objectives, and how it is shaped), the lecture, a case-study forum on odd-numbered Modules 03 to 15, the quiz, and the assignment or lab. Module 01 opens with the introductions forum and closes with the setup lab. Module 02 has one graded design-and-repair assignment and an optional, ungraded runbook review. Module 07 has a scan-reading assignment. Module 08 adds the midterm companion, the design project kickoff, the Design Project Expectations page, and the midterm practical page. Module 12 carries the design project draft and Module 16 the design project final.
+Each module's pages appear in a fixed order: a preface (what the module is for, its objectives, and how it is shaped), the lecture, a case-study forum on odd-numbered Modules 03 to 15, the quiz, and the assignment or lab. Module 01 opens with the introductions forum and closes with the setup lab. Module 02 has one graded design-and-repair assignment. Module 07 has a scan-reading assignment. Module 08 adds the midterm companion, the design project kickoff, the Design Project Expectations page, and the midterm practical page. Module 12 carries the design project draft and Module 16 the design project final.
 
 Students repair the portal itself. In Module 01 each student launches their own copy of the portal in Google Cloud Shell and works in that copy for the rest of the term, changing its code in the editor. There is nothing to install and no local server. In eleven modules a TechCorp security incident arrives against one of the portal's features. The student writes the incident report on the TC-IR-01 form, then reproduces the incident in their own copy, repairs the code, and proves the fix with two tests: the hostile request fails after the change, and legitimate use still works. The report and the fix are submitted together.
 
@@ -78,7 +78,7 @@ Course materials are written at transfer level. Students read specifications, pu
 
 ### Original and working portal copies
 
-The Cloud Shell workspace contains `site/` (original, port 8080), `fixed/` (working repairs, port 8081), and `reports/` (evidence and writing). Students reproduce the starting behavior in `site/`, change code in `fixed/`, and prove both hostile rejection and legitimate success in the working copy. Each portal has its own database. Repairs accumulate in `fixed/` throughout the term. Submit the complete changed source files with the required report and evidence; code snippets in a report do not replace the source files. The setup lab downloads its practice edits before restoring the two labels; the design lab keeps its router mitigation. The readiness review is optional, ungraded practice with no submission.
+The Cloud Shell workspace contains `site/` (original, port 8080), `fixed/` (working repairs, port 8081), and `reports/` (evidence and writing). Students reproduce the starting behavior in `site/`, change code in `fixed/`, and prove both hostile rejection and legitimate success in the working copy. Each portal has its own database. Repairs accumulate in `fixed/` throughout the term. Submit the complete changed source files with the required report and evidence; code snippets in a report do not replace the source files. The setup lab downloads its practice edits before restoring the two labels; the design lab keeps its router mitigation.
 
 ## Required materials
 
@@ -218,4 +218,4 @@ Calendar dates for each module are published on the Module Schedule page in Canv
 
 ---
 
-Early reports use supplied worksheets: M01 records setup and a comparison; M02 adds brief design reasoning; its three runbook checks are optional, ungraded practice. Full incident-report detail is introduced progressively in later vulnerability assignments.
+Early reports use supplied worksheets: M01 records setup and a comparison; M02 adds brief design reasoning and before/after repair evidence. Full incident-report detail is introduced progressively in later vulnerability assignments.

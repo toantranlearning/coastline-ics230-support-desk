@@ -2,7 +2,7 @@
 
 ## One assignment: Read → Fix → Prove → Report
 
-Submit one short worksheet and your changed `fixed/router.php` for this activity. The runbook review is optional practice, not a second assignment. The module quiz remains separate.
+Submit one short worksheet and your changed `fixed/router.php` for this activity. The module quiz remains separate.
 
 ## What you will do
 
@@ -150,7 +150,7 @@ curl -sS -i http://127.0.0.1:8081/data/portal.sqlite
 - `router.php`: your complete changed file from `fixed/`.
 - Any optional image evidence referenced in your report.
 
-Keep the working change in your portal. Do not submit the database, original site, or a full application archive. The [optional runbook review](5_m03_runbook-practice.html) is ungraded practice; it requires no additional submission.
+Keep the working change in your portal. Do not submit the database, original site, or a full application archive.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
 
