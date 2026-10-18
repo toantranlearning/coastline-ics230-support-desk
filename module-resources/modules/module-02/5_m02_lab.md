@@ -35,9 +35,9 @@ For missing folders, an occupied port, or an older workspace, follow the [Cloud 
 2. Sign in with username `rmarsh` and password `password`. These fictional portal credentials are separate from your Google account.
 3. Check for **TechCorp Portal** in the top bar and **Customers** as the heading. Take **Capture 1**, saved as `m01-setup-before.png`.
 4. Return to Cloud Shell. Choose **Web Preview → Change port**, enter **8081**, and click **Change and Preview**. This is **fixed**, your working copy. Sign in separately with the same fictional credentials.
-![Cloud Shell Web Preview menu with Preview on port 8080 and Change port](m01-cloud-shell-preview-menu.jpg)
+![Cloud Shell Web Preview menu showing the selected port and Change port](m01-cloud-shell-preview-menu.jpg)
 
-*Actual Cloud Shell controls: choose Preview on port 8080 for site, or Change port for fixed.*
+*Actual Cloud Shell controls: the Preview label remembers the last selected port (8081 here). Use Change port to select 8080 for site or 8081 for fixed.*
 
 ![Change Preview Port dialog with Port Number set to 8081](m01-cloud-shell-port-8081.jpg)
 
