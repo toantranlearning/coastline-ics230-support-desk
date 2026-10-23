@@ -117,6 +117,8 @@ bash scripts/start.sh
 
 ## Fix and prove the working copy
 
+**Response ordering:** validate the identifier and decide any refusal before `page_header()` or other output. Otherwise the page may already have sent a 200 status before the refusal runs. Keep the lookup parameterized.
+
 > [!CORRECT] Change the working files
 > Open the corresponding paths under fixed/. Use Find to locate the named expression or function; the cited line numbers are reference locations and will change as your repairs accumulate. Save each change before testing.
 
