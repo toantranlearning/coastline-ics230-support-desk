@@ -1,15 +1,56 @@
 # M03 - Assignment: Fix Customer Search Rendering
 
+> This repository copy contains the current task instructions and reference images. Download the Word report template from the matching Canvas assignment. Keep your existing Cloud Shell workspace and earlier repairs; returning students do not need a new clone.
+
+
+<!-- verification-guide:start -->
+## Visual guide and matched verification
+
+The Customers menu opens index.php, not the search form. Replace the path in your own preview address with /customer.php?q=Test; keep the preview hostname and port.
+
+Open this path in your **original 8080 preview tab**, preserving its Cloud Shell hostname:
+
+```text
+/customer.php?q=Test
+```
+
+![Original released portal reference for m03: search page](assets/m03-baseline-screen.png)
+
+This is an actual instructor browser capture from a disposable copy of the released portal. It shows the starting interface, not your repaired result. The capture used a temporary local port; your original and working copies remain **8080** and **8081**. Capture your own evidence.
+
+### Keep the comparison controlled
+
+![Reference expectations for m03: the same input compared with the starting point and acceptance check](assets/m03-comparison-guide.png)
+
+This comparison card summarizes the first row below. It is a teaching guide, not an observed repaired result. The full table and commands remain selectable text.
+
+For each row, record the exact input, signed-in actor, path, port, status or visible behavior, and any state change. Repeat the same test on the original **8080** and working **8081** copies; change only the intended control or comparison variable. If an earlier repair already blocks a case, record that result and keep the repair. Never invent the illustrated outcome.
+
+| Input or check | Starting point to record | Acceptance check to capture |
+|---|---|---|
+| Search q=Test | Stored <b>Test Account</b> is interpreted as bold markup | Literal <b>Test Account</b>, including angle brackets |
+| q[]=Test; markup q=<b>; 41-letter query | Observe the actual starting behavior | Generic refusal without a warning or stack trace |
+| q=Brien; q=é; empty query; 40 letters | Record normal behavior | Allowed according to the stated Unicode and length rules |
+
+**Legitimate use and limits.** Brien finds O'Brien; Customers and a search-result account link still work. Do not fix the SQL queries in this module.
+
+### Capture and submit consistently
+
+Keep command inputs as selectable text beside their output. For browser evidence, show the relevant page, field, and result; a browser image alone does not establish the HTTP status. For HTTP evidence, retain the status and relevant headers as text, and verify any claimed write or refusal in application state. Label before and after captures with the port, actor, and test input. Add captions and alt text in the Word report. Use the complete verification steps below, not just the summary rows.
+
+<!-- verification-guide:end -->
+
+
 ## Downloads and instructions
 
 Start here. These are all the supplied files for this assignment.
 
 | File | Download and use |
 |---|---|
-| Word report | [Get the Word report from Canvas](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html#downloads-for-modules-1-3). Open it in Word or Word Online and save your own copy. |
+| Word report | **Download report**: obtain `m03-tc-ir-002-template.docx` from this module’s Canvas assignment. Open it in Word or Word Online and save your own copy. |
 | Task instructions | [Download assignment.md](assignment.md). This is the supplied copy of these instructions; keep it unchanged and submit it with your work. |
 
-The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use [Word Reports and Assignment Files](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html). That guide also lists all current Word report and instruction downloads together.
+The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use **Word Reports and Assignment Files** (reference page in Canvas). That guide also lists all current Word report and instruction downloads together.
 
 Your changed **customer.php** must come from your own working copy. Download the complete edited file(s) from Cloud Shell as directed below; they are not supplied completed answers.
 
@@ -51,7 +92,7 @@ bash scripts/start.sh
 
 7. Open your Word report and complete the name, date/time zone, and disclosure prompts.
 
-For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html). Test only your own portals under the [Rules Of Engagement](../module-01/18_m01_rules-of-engagement.html).
+For startup help, use the **Cloud Shell Guide** (reference page in Canvas). Test only your own portals under the **Rules Of Engagement** (reference page in Canvas).
 
 ## Step 2: Reproduce the rendering problem
 
@@ -61,7 +102,7 @@ For startup help, use the [Cloud Shell Guide](../module-01/6_m01_working-in-goog
 4. Click **Customers** in the navigation. The same name should show its literal `<b>` tags. This comparison shows that one page already handles the stored name safely.
 5. Open `site/index.php` in the editor. Search for `display_name` and find the expression using `htmlspecialchars`. Open `site/customer.php` and find the name inside the results link. In report section 5, explain the difference in one sentence.
 
-Instructional image description: Actual original customer search for Test showing Test Account as bold text without visible markup tags.
+![Actual original customer search for Test showing Test Account as bold text without visible markup tags](assets/m03-search-before.jpg)
 
 *Reference screenshot from the local original portal: the stored name renders as bold text. After your repair, its literal angle brackets must be visible. Collect your own before-and-after evidence.*
 
@@ -89,6 +130,10 @@ Instructional image description: Actual original customer search for Test showin
 6. Save your file. Do not add a browser-only check as the security control: a requester can bypass it.
 
 ## Step 5: Encode the outputs
+
+> [!WARNING] Validation and encoding do different work
+> Validate the search term before use, then encode each value when it is written to HTML. A name read from the database still needs output encoding.
+
 
 1. Return to the three HTML text/attribute expressions that print `$q` or the stored display name. At each output, use `htmlspecialchars` with `ENT_QUOTES | ENT_SUBSTITUTE` and `'UTF-8'`. The safe name output in `site/index.php` is a starting example; include both required flags in your repair.
 2. Apply encoding where the value is printed. Do not replace the raw search term with an HTML-encoded version before validation or querying.
@@ -137,6 +182,10 @@ The Word template introduces selected TC-IR-01 sections without requiring the fu
 
 ## What to submit
 
+> [!NOTE] Keep the report and implementation together
+> The Word report explains your results. The complete changed source is the implementation. Include both, plus the supplied assignment.md, in the same Canvas attempt.
+
+
 Submit your completed Word report. All changed-code requirements still apply; paste required screenshots into the report.
 
 
@@ -158,7 +207,7 @@ Submit these three parts together: **assignment.md**, your completed **m03-tc-ir
 1. In the IDE file list, expand `assignments`, then `module-03`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
 2. Right-click that `assignment.md` file and choose **Download**. The same file is linked in **Downloads and instructions** at the top.
 3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
-4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
+4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For this activity, include the complete changed source files named in the submission list.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
@@ -178,7 +227,7 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 
 ## Grading rubric
 
-Use the shared [Assignment rubric](../module-01/22_m01_assignment-rubric.html). The activity-specific evidence and source-file requirements are listed above.
+Use the shared **Assignment rubric** (reference page in Canvas). The activity-specific evidence and source-file requirements are listed above.
 
 ## Explain the impact
 

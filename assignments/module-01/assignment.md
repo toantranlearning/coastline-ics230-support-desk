@@ -1,15 +1,55 @@
 # M01 - Launch Course Environment
 
+> This repository copy contains the current task instructions and reference images. Download the Word report template from the matching Canvas assignment. Keep your existing Cloud Shell workspace and earlier repairs; returning students do not need a new clone.
+
+
+<!-- verification-guide:start -->
+## Visual guide and matched verification
+
+Use the Customers page to compare the two labels. The exercise changes only fixed/layout.php and fixed/index.php, then restores those labels after you download the changed files.
+
+Open this path in your **original 8080 preview tab**, preserving its Cloud Shell hostname:
+
+```text
+/index.php
+```
+
+![Original released portal reference for m01: customers page](assets/m01-baseline-screen.png)
+
+This is an actual instructor browser capture from a disposable copy of the released portal. It shows the starting interface, not your repaired result. The capture used a temporary local port; your original and working copies remain **8080** and **8081**. Capture your own evidence.
+
+### Keep the comparison controlled
+
+![Reference expectations for m01: the same input compared with the starting point and acceptance check](assets/m01-comparison-guide.png)
+
+This comparison card summarizes the first row below. It is a teaching guide, not an observed repaired result. The full table and commands remain selectable text.
+
+For each row, record the exact input, signed-in actor, path, port, status or visible behavior, and any state change. Repeat the same test on the original **8080** and working **8081** copies; change only the intended control or comparison variable. If an earlier repair already blocks a case, record that result and keep the repair. Never invent the illustrated outcome.
+
+| Input or check | Starting point to record | Acceptance check to capture |
+|---|---|---|
+| Top bar and page heading | TechCorp Portal; Customers | Your chosen top-bar label; My Customers, only on 8081 |
+| Restore the two labels | 8080 remains unchanged | 8081 again shows TechCorp Portal and Customers |
+
+**Legitimate use and limits.** Sign in separately on each port; keep all three required captures: original, changed, and restored.
+
+### Capture and submit consistently
+
+Keep command inputs as selectable text beside their output. For browser evidence, show the relevant page, field, and result; a browser image alone does not establish the HTTP status. For HTTP evidence, retain the status and relevant headers as text, and verify any claimed write or refusal in application state. Label before and after captures with the port, actor, and test input. Add captions and alt text in the Word report. Use the complete verification steps below, not just the summary rows.
+
+<!-- verification-guide:end -->
+
+
 ## Downloads and instructions
 
 Start here. These are all the supplied files for this assignment.
 
 | File | Download and use |
 |---|---|
-| Word report | [Get the Word report from Canvas](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html#downloads-for-modules-1-3). Open it in Word or Word Online and save your own copy. |
+| Word report | **Download report**: obtain `m01-setup-template.docx` from this module’s Canvas assignment. Open it in Word or Word Online and save your own copy. |
 | Task instructions | [Download assignment.md](assignment.md). This is the supplied copy of these instructions; keep it unchanged and submit it with your work. |
 
-The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use [Word Reports and Assignment Files](../../module-resources/modules/module-01/8_m01_writing-in-markdown.html). That guide also lists all current Word report and instruction downloads together.
+The complete step-by-step instructions follow on this page. For help with report editing, screenshots, revision history, and uploading, use **Word Reports and Assignment Files** (reference page in Canvas). That guide also lists all current Word report and instruction downloads together.
 
 Your changed **layout.php and index.php** must come from your own working copy. Download the complete edited file(s) from Cloud Shell as directed below; they are not supplied completed answers.
 
@@ -46,9 +86,9 @@ site portal is running on port 8080.
 fixed portal is running on port 8081.
 ```
 
-For missing folders, an occupied port, or an older workspace, follow the [Cloud Shell Guide](../module-01/6_m01_working-in-google-cloud-shell.html). Your own two portal copies are the only authorized targets.
+For missing folders, an occupied port, or an older workspace, follow the **Cloud Shell Guide** (reference page in Canvas). Your own two portal copies are the only authorized targets.
 
-Instructional image description: Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports.
+![Workspace map identifying original and fixed folders, editor, terminal, reports, and preview ports](assets/m01-workspace-map.svg)
 
 *Workspace map: a simplified instructional diagram, not a Cloud Shell screenshot. Commands and labels remain written in the steps above.*
 
@@ -58,22 +98,26 @@ Instructional image description: Workspace map identifying original and fixed fo
 2. Sign in with username `rmarsh` and password `password`. These fictional portal credentials are separate from your Google account.
 3. Check for **TechCorp Portal** in the top bar and **Customers** as the heading. Take **Capture 1**, saved as `m01-setup-before.png`.
 4. Return to Cloud Shell. Choose **Web Preview → Change port**, enter **8081**, and click **Change and Preview**. This is **fixed**, your working copy. Sign in separately with the same fictional credentials.
-Instructional image description: Cloud Shell Web Preview menu showing the selected port and Change port.
+![Cloud Shell Web Preview menu showing the selected port and Change port](assets/m01-cloud-shell-preview-menu.jpg)
 
 *Actual Cloud Shell controls: the Preview label remembers the last selected port (8081 here). Use Change port to select 8080 for site or 8081 for fixed.*
 
-Instructional image description: Change Preview Port dialog with Port Number set to 8081.
+![Change Preview Port dialog with Port Number set to 8081](assets/m01-cloud-shell-port-8081.jpg)
 
 *Enter 8081, then select Change and Preview to open fixed.*
 
 5. Check that both copies initially show the same labels. Keep both tabs open and check their ports before reloading or testing.
 6. In the editor, open `site/layout.php` and `site/index.php` to read the original labels. Leave these files unchanged.
 
-Instructional image description: Actual original portal customer list showing TechCorp Portal and Customers.
+![Actual original portal customer list showing TechCorp Portal and Customers](assets/m01-portal-original.jpg)
 
 *Reference screenshot from the local course portal: look for TechCorp Portal in the top bar and Customers above the table. Use your own captures in your submission.*
 
 ## Step 3: Change only the working copy
+
+> [!CORRECT] Edit the copy on 8081
+> Select fixed/ in the editor before changing the labels. The original on port 8080 stays your comparison.
+
 
 1. Open `fixed/layout.php`. Use **Ctrl+F** (**Cmd+F** on a Mac) to find:
 
@@ -97,7 +141,7 @@ php -l fixed/index.php
 
 5. Resolve any syntax errors. Successful checks say `No syntax errors detected`; you still need the browser comparison below.
 
-Instructional image description: Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34.
+![Actual Cloud Shell editor with fixed/layout.php open and the brand label at line 34](assets/m01-cloud-shell-edit-label.jpg)
 
 *Actual Cloud Shell editor: fixed is expanded in the file list, with layout.php selected and its brand span visible. Change only the TechCorp Portal text inside the brand span. Your workspace folder name may differ.*
 
@@ -135,7 +179,7 @@ Submit these three parts together: **assignment.md**, your completed **m01-setup
 1. In the IDE file list, expand `assignments`, then `module-01`, and click `assignment.md`. This is the supplied task description. Leave it unchanged.
 2. Right-click that `assignment.md` file and choose **Download**. The same file is linked in **Downloads and instructions** at the top.
 3. Save your completed Word report on your computer and download the changed source file(s) from `fixed/`, as directed above.
-4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For Module 1, the code part contains both changed `layout.php` and `index.php` downloaded before restoration.
+4. Upload **all three parts** to the same Canvas attempt, together with required evidence images. For this activity, include the complete changed source files named in the submission list.
 5. Before selecting **Submit Assignment**, confirm the upload list contains `assignment.md`, your report, every required changed source file, and required images. Keep the lab instructions, your completed report, and your changed code together in the same submission.
 
 Open notes and open book are both fine. Respond in your own words; do not copy from other sources.
@@ -162,6 +206,10 @@ You must be able to explain every line you submit, on request. Undisclosed AI us
 - The report explains the two copies and contains actual startup and syntax results.
 
 ## What to submit
+
+> [!NOTE] Keep the report and implementation together
+> The Word report explains your results. The complete changed source is the implementation. Include both, plus the supplied assignment.md, in the same Canvas attempt.
+
 
 - Completed `m01-setup.docx`, including all answers and three screenshots
 - Supplied `assignment.md`
